@@ -14,35 +14,37 @@
 
 .al-input-group input {
     border-width: 2px;
-    border-color: rgb(207, 216, 220);
+    border-color: #cfd8dc;
     border-style: solid;
     border-radius: 2px !important;
     width: 326px !important;
     height: 48px !important;
 
     font-size: 16px;
-    font-family: "montserratRegular";
-    color: rgb(38, 50, 56);
+    font-family: montserratRegular;
+    color: #263238;
     margin-bottom: 20px !important;
 }
 .al-input-group input:focus {
     border-width: 2px;
-    border-color: rgb(207, 216, 220);
+    border-color: #cfd8dc;
     border-style: solid;
     border-radius: 2px !important;
     width: 326px !important;
     height: 48px !important;
 
     font-size: 16px;
-    font-family: "montserratRegular";
-    color: rgb(38, 50, 56);
+    font-family: montserratRegular;
+    color: #263238;
     margin-bottom: 20px !important;
     box-shadow: none;
     outline: none;
 }
 
 .al-input-group input::placeholder {
-    color: rgb(0, 0, 0);
+    color: #263238;
+    font-family: montserratRegular;
+    font-size: 16px;
 }
 
 .al-continue-btn, .al-continue-btn:hover, .al-continue-btn:focus {
