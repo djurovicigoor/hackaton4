@@ -1,10 +1,10 @@
 //Smart System
-app.controller('EventCtrl', function ($rootScope, $http) {
-    $rootScope.smartSys = function (key) {
+app.controller('EventCtrl', function ($rootScope, $http, ROUTES) {
+    $rootScope.smartSys = function (keys) {
         var eventData = {
-            key: key
+            smartkeys: keys
         };
-        $http.post('api/yolo', eventData)
+        $http.post(ROUTES.api + 'smartattributes', eventData)
             .then(function (response) {
                 console.log(response);
             }, function (error) {

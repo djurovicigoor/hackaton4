@@ -36,6 +36,18 @@ app.config(['$routeProvider', '$httpProvider', function ($routeProvider, $httpPr
             css: 'angular/templates/register/register.css'
         })
 
+        .when('/jobs', {
+            templateUrl: 'angular/templates/jobs/jobs.html',
+            controller: 'JobsCtrl',
+            css: 'angular/templates/jobs/jobs.css'
+        })
+
+        .when('/why', {
+            templateUrl: 'angular/templates/why-we/why-we.html',
+            controller: 'WhyWeCtrl',
+            css: 'angular/templates/why-we/why-we.css'
+        })
+
         .otherwise({
             redirectTo: '/404'
         });
