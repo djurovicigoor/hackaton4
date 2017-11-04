@@ -28,3 +28,33 @@
     src: url(../Fonts/Montserrat-ExtraLight.ttf);
 }
 /*FONT END*/
+
+.custom-navbar {
+    background-color: #ffffff;
+    border: none;
+}
+.custom-signup {
+    margin-top: 8px;
+    border-radius: 0px;
+    border: 2px solid #263238;
+    font-family: montserratRegular;
+    font-size: 16px;
+    color: #263238;
+}
+.navbar-default .navbar-nav>li>a {
+    color: #263238!important;
+}
+.custom-navbar-text {
+    font-family: montserratRegular;
+    font-size: 16px;
+}
+.custom-search-input {
+    height: 58px;
+    font-size: 16px;
+    font-family: montserratRegular;
+    color: #263238;
+    border: 0px solid #eceff1;
+    background-color: #eceff1;
+    border-radius: 2px;
+    box-shadow: none;
+}
