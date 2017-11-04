@@ -12,6 +12,7 @@
 <body ng-controller="EventCtrl">
 <ng-view></ng-view>
 <!-- LIB -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="{{asset('node_modules/bootstrap/dist/js/bootstrap.min.js')}}"></script>
 <script src="{{asset('node_modules/angular/angular.min.js')}}"></script>
 <script src="{{asset('node_modules/angular-route/angular-route.min.js')}}"></script>
