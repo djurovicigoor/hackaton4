@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Hakaton</title>
     <link rel="stylesheet" href="{{asset('node_modules/angular-ui-notification/dist/angular-ui-notification.min.css')}}">
-   <!-- <link rel="stylesheet" href="{{asset('node_modules/bootstrap/dist/css/bootstrap.min.css')}}"> -->
+    <link rel="stylesheet" href="{{asset('node_modules/bootstrap/dist/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('node_modules/angular-ui-bootstrap/dist/ui-bootstrap-csp.css')}}">
 
     <link rel="stylesheet" href="{{asset('angular/css/style.css')}}">
