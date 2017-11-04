@@ -18,6 +18,5 @@ app.controller('JobsCtrl', function ($scope, $http, ROUTES) {
 
             });
     };
-
     $scope.getJobs(1);
 });

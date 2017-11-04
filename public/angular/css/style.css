@@ -33,7 +33,7 @@
     background-color: #ffffff;
     border: none;
 }
-.custom-signup {
+.custom-signup, .custom-signup:focus, .custom-signup:active, .custom-signup:active:focus {
     margin-top: 8px;
     border-radius: 0px;
     border: 2px solid #263238;
@@ -41,6 +41,9 @@
     font-size: 16px;
     color: #263238;
     transition: all 0.3s ease-out;
+    background-color: transparent;
+    box-shadow: none;
+    outline: none;
 }
 .custom-signup:hover {
     border-color: #2962ff;

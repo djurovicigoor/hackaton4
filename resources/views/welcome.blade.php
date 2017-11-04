@@ -57,7 +57,7 @@
                 <ul class="nav navbar-nav navbar-right custom-navbar-text">
                     <li><a href="#!/">Home</a></li>
                     <li><a href="#!/jobs">Jobs</a></li>
-                    <li><a href="#">Why we?</a></li>
+                    <li><a href="#!/why">Why we?</a></li>
                     <li><a href="#!/login">Sign in</a></li>
                     <a href="#!/register" type="button" class="btn btn-default custom-signup">Sign up</a>
                 </ul>
@@ -91,6 +91,7 @@
 <script src="{{asset('angular/templates/register/register.ctrl.js')}}"></script>
 <script src="{{asset('angular/templates/why-we/why-we.ctrl.js')}}"></script>
 <script src="{{asset('angular/templates/jobs/jobs.ctrl.js')}}"></script>
+<script src="{{asset('angular/templates/hire/hire.ctrl.js')}}"></script>
 <!-- Smart system -->
 <script src="{{asset('angular/js/smartsys.js')}}"></script>
 </body>
