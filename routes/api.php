@@ -16,5 +16,6 @@ Route::post( 'logout', 'Auth\LoginController@logout' )->name( 'logout' );
 
 // Registration Routes...
 Route::post( 'register', 'Auth\RegisterController@register' );
+Route::post( 'job/search', 'JobController@search' );
 Route::resource( 'job', 'JobController' );
 Route::resource( 'smartattributes', 'SmartAttributes' );

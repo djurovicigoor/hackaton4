@@ -89,5 +89,15 @@ class JobController extends Controller {
 	 */
 	public function destroy( Job $job ) {
 		//
+	}	/**
+	 * Remove the specified resource from storage.
+	 *
+	 * @param  \App\Job $job
+	 * @return \Illuminate\Http\Response
+	 */
+	public function search( Request $request) {
+		$jobs = Job::search($request->get('query'))->with('category.subCategories')->get();
+		return response()->customResponse( 200, 'Success', $jobs );
+		
 	}
 }
