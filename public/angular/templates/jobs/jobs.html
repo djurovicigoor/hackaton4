@@ -17,13 +17,13 @@
                     </ul>
                 </div><!-- /btn-group -->
             </div><!-- /input-group -->
-            <ul class="pagination pull-right">
-                <li ng-if="jobs.current_page > 1"><a ng-click="getJobs(1)"><<</a></li>
-                <li ng-if="jobs.current_page > 1"><a ng-click="getJobs(jobs.current_page-1)">{{jobs.current_page-1}}</a></li>
-                <li><a class="active">{{jobs.current_page}}</a></li>
-                <li ng-if="jobs.next_page_url != null"><a ng-click="getJobs(jobs.current_page+1)">{{jobs.current_page+1}}</a></li>
-                <li ng-if="jobs.current_page != jobs.last_page"><a ng-click="getJobs(jobs.last_page)">>></a></li>
-            </ul>
+            <!--<ul class="pagination pull-right">-->
+                <!--<li ng-if="jobs.current_page > 1"><a ng-click="getJobs(1)"><<</a></li>-->
+                <!--<li ng-if="jobs.current_page > 1"><a ng-click="getJobs(jobs.current_page-1)">{{jobs.current_page-1}}</a></li>-->
+                <!--<li><a class="active">{{jobs.current_page}}</a></li>-->
+                <!--<li ng-if="jobs.next_page_url != null"><a ng-click="getJobs(jobs.current_page+1)">{{jobs.current_page+1}}</a></li>-->
+                <!--<li ng-if="jobs.current_page != jobs.last_page"><a ng-click="getJobs(jobs.last_page)">>></a></li>-->
+            <!--</ul>-->
         </div><!-- /.col-lg-6 -->
     </div><!-- /.row -->
     <p class="title-text">Result for Design</p>
@@ -48,12 +48,14 @@
             </div>
         </a>
     </div>
-    <ul class="pagination pull-right">
-        <li ng-if="jobs.current_page > 1"><a ng-click="getJobs(1)"><<</a></li>
-        <li ng-if="jobs.current_page > 1"><a ng-click="getJobs(jobs.current_page-1)">{{jobs.current_page-1}}</a></li>
-        <li><a class="active">{{jobs.current_page}}</a></li>
-        <li ng-if="jobs.next_page_url != null"><a ng-click="getJobs(jobs.current_page+1)">{{jobs.current_page+1}}</a></li>
-        <li ng-if="jobs.current_page != jobs.last_page"><a ng-click="getJobs(jobs.last_page)">>></a></li>
-    </ul>
+    <div class="pagination-position">
+        <ul class="pagination">
+            <li ng-if="jobs.current_page > 1"><a ng-click="getJobs(1)"><<</a></li>
+            <li ng-if="jobs.current_page > 1"><a ng-click="getJobs(jobs.current_page-1)">{{jobs.current_page-1}}</a></li>
+            <li><a class="active">{{jobs.current_page}}</a></li>
+            <li ng-if="jobs.next_page_url != null"><a ng-click="getJobs(jobs.current_page+1)">{{jobs.current_page+1}}</a></li>
+            <li ng-if="jobs.current_page != jobs.last_page"><a ng-click="getJobs(jobs.last_page)">>></a></li>
+        </ul>
+    </div>
 </div>
 
