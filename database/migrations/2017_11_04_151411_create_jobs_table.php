@@ -14,7 +14,12 @@ class CreateJobsTable extends Migration {
 		Schema::create( 'jobs', function( Blueprint $table ) {
 			$table->increments( 'id' );
 			$table->string( 'name' );
+			$table->unsignedInteger( 'hirer_id' );
 			$table->timestamps();
+		} );
+		
+		Schema::table( 'jobs', function( Blueprint $table ) {
+			$table->foreign( 'hirer_id' )->references( 'id' )->on( 'users' )->onDelete( 'cascade' )->onUpdate( 'cascade' );
 		} );
 	}
 	

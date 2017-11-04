@@ -1,7 +1,5 @@
 <?php
 
-use Illuminate\Http\Request;
-
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -18,3 +16,5 @@ Route::post( 'logout', 'Auth\LoginController@logout' )->name( 'logout' );
 
 // Registration Routes...
 Route::post( 'register', 'Auth\RegisterController@register' );
+Route::resource( 'job', 'JobController' );
+Route::resource( 'smartattributes', 'SmartAttributes' );

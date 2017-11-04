@@ -65,7 +65,7 @@ class LoginController extends Controller {
 				'roles' => $roles,
 			] );
 		} else {
-			return response()->customResponse( 200, 'Wrong username or password!', NULL );
+			return response()->customResponse( 400, 'Wrong username or password!', NULL );
 		}
 	}
 	
@@ -76,7 +76,7 @@ class LoginController extends Controller {
 		if(JWTAuth::invalidate( JWTAuth::getToken() )) {
 			return response()->customResponse( 200, 'You are successfully logout!', NULL );
 		} else {
-			return response()->customResponse( 200, 'Woops! Something went wrong!', NULL, 'logout_error' );
+			return response()->customResponse( 400, 'Woops! Something went wrong!', NULL, 'logout_error' );
 		}
 	}
 }
