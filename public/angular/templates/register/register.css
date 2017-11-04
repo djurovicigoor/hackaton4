@@ -75,6 +75,7 @@
     background-color: rgb(247, 247, 247);
     margin-top: 15px;
     margin-bottom: 25px;
+    transition: all 0.3s ease-out;
 }
 
 .al-radiobtn.active {
