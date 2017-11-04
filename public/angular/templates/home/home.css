@@ -21,6 +21,7 @@
     background-color: #2962ff!important;
     width: 165px;
     border: none;
+    transition: all 0.3s ease-out;
 }
 .custom-search-button:hover {
     background-color: #4577ff!important;
@@ -68,4 +69,7 @@
     font-size: 12px;
     color: #b0bec5;
     margin-top: 27px;
+}
+.card-position {
+    margin-top: 20px;
 }
