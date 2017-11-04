@@ -30,6 +30,12 @@ app.config(['$routeProvider', '$httpProvider', function ($routeProvider, $httpPr
             css: 'angular/templates/login/login.css'
         })
 
+        .when('/register', {
+            templateUrl: 'angular/templates/register/register.html',
+            controller: 'RegisterCtrl',
+            css: 'angular/templates/register/register.css'
+        })
+
         .otherwise({
             redirectTo: '/404'
         });

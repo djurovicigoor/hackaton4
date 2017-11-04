@@ -87,7 +87,7 @@
 <script src="{{asset('angular/templates/home/home.ctrl.js')}}"></script>
 <script src="{{asset('angular/templates/404/404.ctrl.js')}}"></script>
 <script src="{{asset('angular/templates/login/login.ctrl.js')}}"></script>
-
+<script src="{{asset('angular/templates/register/register.ctrl.js')}}"></script>
 <!-- Smart system -->
 <script src="{{asset('angular/js/smartsys.js')}}"></script>
 </body>
