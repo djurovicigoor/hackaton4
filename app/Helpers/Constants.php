@@ -11,21 +11,22 @@ namespace App\Helpers;
 
 class Constants {
 	
-	const STRONGMAN_ROLE = [
+	const ADMIN_ROLE = [
 		1,
-		'strongman',
-		'Strongman',
+		'admin',
+		'Admin',
 	];
 	
-	const TRAINER_ROLE = [
+	const HIRER_ROLE  = [
 		2,
-		'trainer',
-		'Trainer',
+		'hirer',
+		'Hirer',
 	];
-	const CLIENT_ROLE  = [
+	
+	const WORKER_ROLE = [
 		3,
-		'client',
-		'Client',
+		'worker',
+		'Worker',
 	];
-
+	
 }
