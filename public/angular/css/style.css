@@ -48,13 +48,3 @@
     font-family: montserratRegular;
     font-size: 16px;
 }
-.custom-search-input {
-    height: 58px;
-    font-size: 16px;
-    font-family: montserratRegular;
-    color: #263238;
-    border: 0px solid #eceff1;
-    background-color: #eceff1;
-    border-radius: 2px;
-    box-shadow: none;
-}
