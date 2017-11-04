@@ -8,12 +8,13 @@
     <link rel="stylesheet" href="{{asset('node_modules/angular-ui-notification/dist/angular-ui-notification.min.css')}}">
     <link rel="stylesheet" href="{{asset('node_modules/bootstrap/dist/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('node_modules/angular-ui-bootstrap/dist/ui-bootstrap-csp.css')}}">
+    <link rel="stylesheet" href="{{asset('node_modules/font-awesome/css/font-awesome.min.css')}}">
 
     <link rel="stylesheet" href="{{asset('angular/css/style.css')}}">
 
 </head>
 <body ng-controller="EventCtrl">
-<nav class="navbar navbar-default custom-navbar">
+<nav style="padding-top: 15px" class="navbar navbar-default custom-navbar">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
