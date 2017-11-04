@@ -56,7 +56,7 @@
                 {{--</form>--}}
                 <ul class="nav navbar-nav navbar-right custom-navbar-text">
                     <li><a href="#!/">Home</a></li>
-                    <li><a href="#">Jobs</a></li>
+                    <li><a href="#!/jobs">Jobs</a></li>
                     <li><a href="#">Why we?</a></li>
                     <li><a href="#!/login">Sign in</a></li>
                     <a href="#!/register" type="button" class="btn btn-default custom-signup">Sign up</a>

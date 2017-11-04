@@ -1,1 +1,59 @@
-<p>Jobs</p>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 custom-position">
+            <div class="input-group">
+                <input type="text" class="form-control custom-search-input" aria-label="...">
+                <div class="input-group-btn" uib-dropdown is-open="status.isopen">
+                    <button id="single-button" type="button" class="btn btn-primary custom-search-button"
+                            uib-dropdown-toggle ng-disabled="disabled">
+                        Category <i class="fa fa-angle-down" aria-hidden="true"></i>
+                    </button>
+                    <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
+                        <li role="menuitem"><a href="#">Action</a></li>
+                        <li role="menuitem"><a href="#">Another action</a></li>
+                        <li role="menuitem"><a href="#">Something else here</a></li>
+                        <li class="divider"></li>
+                        <li role="menuitem"><a href="#">Separated link</a></li>
+                    </ul>
+                </div><!-- /btn-group -->
+            </div><!-- /input-group -->
+            <ul class="pagination pull-right">
+                <li ng-if="jobs.current_page > 1"><a ng-click="getJobs(1)"><<</a></li>
+                <li ng-if="jobs.current_page > 1"><a ng-click="getJobs(jobs.current_page-1)">{{jobs.current_page-1}}</a></li>
+                <li><a class="active">{{jobs.current_page}}</a></li>
+                <li ng-if="jobs.next_page_url != null"><a ng-click="getJobs(jobs.current_page+1)">{{jobs.current_page+1}}</a></li>
+                <li ng-if="jobs.current_page != jobs.last_page"><a ng-click="getJobs(jobs.last_page)">>></a></li>
+            </ul>
+        </div><!-- /.col-lg-6 -->
+    </div><!-- /.row -->
+    <p class="title-text">Result for Design</p>
+
+    <div class="row card-position">
+        <a href="#" ng-repeat="job in jobs.data"  ng-click="smartSys(job.catArray)">
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail custom-thumbnail">
+                    <img src="angular/img/card-picture.png" alt="...">
+                    <div class="caption">
+                        <h3 class="card-title">{{job.name}}</h3>
+                        <h4 class="company-name">{{job.hirer.name}}</h4>
+                        <div class="row chips-position">
+                            <div ng-repeat="category in job.category">
+                                <!--<div class="custom-chips">{{category.name}}</div>-->
+                                <div ng-repeat="subcat in category.sub_categories" class="custom-chips">{{subcat.name}}</div>
+                            </div>
+                        </div>
+                        <p class="bottom-text">Do 30/11 | Beograd</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    <ul class="pagination pull-right">
+        <li ng-if="jobs.current_page > 1"><a ng-click="getJobs(1)"><<</a></li>
+        <li ng-if="jobs.current_page > 1"><a ng-click="getJobs(jobs.current_page-1)">{{jobs.current_page-1}}</a></li>
+        <li><a class="active">{{jobs.current_page}}</a></li>
+        <li ng-if="jobs.next_page_url != null"><a ng-click="getJobs(jobs.current_page+1)">{{jobs.current_page+1}}</a></li>
+        <li ng-if="jobs.current_page != jobs.last_page"><a ng-click="getJobs(jobs.last_page)">>></a></li>
+    </ul>
+</div>
+
