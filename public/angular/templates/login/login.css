@@ -26,6 +26,21 @@
     color: rgb(38, 50, 56);
     margin-bottom: 20px !important;
 }
+.al-input-group input:focus {
+    border-width: 2px;
+    border-color: rgb(207, 216, 220);
+    border-style: solid;
+    border-radius: 2px !important;
+    width: 326px !important;
+    height: 48px !important;
+
+    font-size: 16px;
+    font-family: "montserratRegular";
+    color: rgb(38, 50, 56);
+    margin-bottom: 20px !important;
+    outline: none;
+    box-shadow: none;
+}
 
 .al-input-group input::placeholder {
     color: rgb(0, 0, 0);
