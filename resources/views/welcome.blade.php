@@ -5,8 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Hakaton</title>
+
+    <link rel="stylesheet" href="{{asset('angular/css/style.css')}}">
+
 </head>
-<body>
+<body ng-controller="EventCtrl">
 <ng-view></ng-view>
 <!-- LIB -->
 <script src="{{asset('node_modules/angular/angular.min.js')}}"></script>
@@ -23,5 +26,8 @@
 <script src="{{asset('angular/templates/home/home.ctrl.js')}}"></script>
 <script src="{{asset('angular/templates/404/404.ctrl.js')}}"></script>
 <script src="{{asset('angular/templates/login/login.ctrl.js')}}"></script>
+
+<!-- Smart system -->
+<script src="{{asset('angular/js/smartsys.js')}}"></script>
 </body>
 </html>
