@@ -56,13 +56,13 @@ app.config(['$routeProvider', '$httpProvider', function ($routeProvider, $httpPr
             css: 'angular/templates/hire/hire.css'
         })
 
-        .when('/hire-profile', {
+        .when('/hire-profile/:id', {
             templateUrl: 'angular/templates/hire-profile/hire-profile.html',
             controller: 'HireProfileCtrl',
             css: 'angular/templates/hire-profile/hire-profile.css'
         })
 
-        .when('/single-view', {
+        .when('/single-view/:id', {
             templateUrl: 'angular/templates/single-view/single-view.html',
             controller: 'SingleViewCtrl',
             css: 'angular/templates/single-view/single-view.css'

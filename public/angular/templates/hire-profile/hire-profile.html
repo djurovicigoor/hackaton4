@@ -14,7 +14,7 @@
                     <img src="angular/img/hireProfile.png" alt="">
                 </div>
                 <div class="col-md-7">
-                    <h3 class="card-title">Name of company</h3>
+                    <h3 class="card-title">{{company.name}}</h3>
                     <p class="card-desc">Web design agency specialized in mobile design & development</p>
                     <a href="#" type="button" class="btn btn-default custom-contact">Contact us</a>
                     <a type="button" class="btn btn-primary custom-employes" ng-click="$ctrl.open()">View employees</a>
@@ -36,36 +36,19 @@
                 <div class="row">
                     <p class="cards-title">LIST OF JOBS</p>
                 </div>
-                <div class="row list-position">
+                <div ng-repeat="job in company.job" class="row list-position">
                     <div class="col-md-3">
                         <div class="custom-thumbnail"><p>30<br>JAN</p></div>
                     </div>
                     <div class="col-md-9 custom-title-padding">
-                        <h3 class="list-title">Neko ime posla ove kompanije</h3>
-                        <p class="card-desc">Naziv firme</p>
+                        <h3 class="list-title">{{job.name}}</h3>
+                        <p class="card-desc">{{company.name}}</p>
                     </div>
                 </div>
-                <div class="row list-position">
-                    <div class="col-md-3">
-                        <div class="custom-thumbnail"><p>30<br>JAN</p></div>
-                    </div>
-                    <div class="col-md-9 custom-title-padding">
-                        <h3 class="list-title">Neko ime posla ove kompanije</h3>
-                        <p class="card-desc">Naziv firme</p>
-                    </div>
-                </div>
-                <div class="row list-position">
-                    <div class="col-md-3">
-                        <div class="custom-thumbnail"><p>30<br>JAN</p></div>
-                    </div>
-                    <div class="col-md-9 custom-title-padding">
-                        <h3 class="list-title">Neko ime posla ove kompanije</h3>
-                        <p class="card-desc">Naziv firme</p>
-                    </div>
-                </div>
-                <div class="cards-footer">
-                    <a href="#">View more</a>
-                </div>
+
+                <!--<div class="cards-footer">-->
+                    <!--<a href="#">View more</a>-->
+                <!--</div>-->
             </div>
         </div>
         <div class="col-md-7">
