@@ -117,6 +117,9 @@
 <script src="{{asset('angular/templates/edit-profile-hire/edit-profile-hire.ctrl.js')}}"></script>
 <script src="{{asset('angular/templates/level-modal/level-modal.ctrl.js')}}"></script>
 
+<script src="{{asset('angular/templates/home-worker/home-worker.ctrl.js')}}"></script>
+<script src="{{asset('angular/templates/modal-worker/modal-worker.ctrl.js')}}"></script>
+<script src="{{asset('angular/templates/edit-profile-worker/edit-profile-worker.ctrl.js')}}"></script>
 <!-- Smart system -->
 <script src="{{asset('angular/js/smartsys.js')}}"></script>
 </body>
