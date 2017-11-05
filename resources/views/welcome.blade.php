@@ -94,6 +94,7 @@
 <script src="{{asset('angular/templates/jobs/jobs.ctrl.js')}}"></script>
 <script src="{{asset('angular/templates/hire/hire.ctrl.js')}}"></script>
 <script src="{{asset('angular/templates/hire-profile/hire-profile.ctrl.js')}}"></script>
+<script src="{{asset('angular/templates/modal/modal.ctrl.js')}}"></script>
 <!-- Smart system -->
 <script src="{{asset('angular/js/smartsys.js')}}"></script>
 </body>

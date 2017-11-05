@@ -170,3 +170,24 @@
     margin-left: 14px;
     margin-bottom: 5px;
 }
+
+.custom-modal-header {
+    border: none;
+}
+.custom-modal-title {
+    font-family: montserratRegular;
+    font-size: 13px;
+    color: #b0bec5;
+}
+.custom-modal-title span {
+    font-family: montserratRegular;
+    font-size: 13px;
+    color: #2962ff;
+}
+.modal-content {
+    border-radius: 0px;
+    /*width: 300px;*/
+}
+.custom-modal-footer {
+    border: none;
+}

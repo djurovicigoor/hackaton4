@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container modal-demo" ng-controller="HireProfileCtrl as $ctrl">
     <div class="row">
         <div class="col-md-6 text-left custom-text-left">
             Profile view
@@ -17,7 +17,7 @@
                     <h3 class="card-title">Name of company</h3>
                     <p class="card-desc">Web design agency specialized in mobile design & development</p>
                     <a href="#" type="button" class="btn btn-default custom-contact">Contact us</a>
-                    <a href="#" type="button" class="btn btn-primary custom-employes">View employees</a>
+                    <a type="button" class="btn btn-primary custom-employes" ng-click="$ctrl.open()">View employees</a>
                 </div>
                 <div class="col-md-3">
                     <div class="mini-card">
@@ -90,5 +90,18 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div >
+
+        <!--<script type="text/ng-template" id="stackedModal.html">-->
+            <!--<div class="modal-header">-->
+                <!--<h3 class="modal-title" id="modal-title-{{name}}">The {{name}} modal!</h3>-->
+            <!--</div>-->
+            <!--<div class="modal-body" id="modal-body-{{name}}">-->
+                <!--Having multiple modals open at once is probably bad UX but it's technically possible.-->
+            <!--</div>-->
+        <!--</script>-->
+
+        <button type="button" class="btn btn-default" >Open me!</button>
     </div>
 </div>
