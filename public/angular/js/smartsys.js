@@ -42,15 +42,17 @@ app.controller('EventCtrl', function ($scope, $rootScope, $http, ROUTES, $pusher
                 }
             }
         });
-    }
-    var my_channel = pusher.subscribe('question.' + $scope.user.id);
+    };
+    if($scope.user) {
+        var my_channel = pusher.subscribe('question.' + $scope.user.id);
 
-    my_channel.bind('App\\Events\\SendQuestionEvent',
-        function (data) {
-            console.log(data);
-            $ctrl.open();
-            $rootScope.question = data.question;
-        });
+        my_channel.bind('App\\Events\\SendQuestionEvent',
+            function (data) {
+                console.log(data);
+                $ctrl.open();
+                $rootScope.question = data.question;
+            });
+    }
 
     $rootScope.smartSys = function (keys) {
         var eventData = {
