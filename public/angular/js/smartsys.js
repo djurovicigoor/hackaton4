@@ -1,5 +1,22 @@
 //Smart System
-app.controller('EventCtrl', function ($rootScope, $http, ROUTES, $pusher) {
+app.controller('EventCtrl', function ($scope, $rootScope, $http, ROUTES, $pusher, $cookies, $location) {
+    $scope.isLogged = false;
+
+    $scope.user = $cookies.getObject('user');
+    console.log($scope.user);
+
+    $scope.logout = function () {
+        $cookies.remove('token');
+        $cookies.remove('users');
+        $cookies.remove('role');
+        $location.path('/login');
+        location.reload();
+    };
+
+    if ($cookies.get('token')) {
+        $scope.isLogged = true;
+    }
+
     //pusher
     var client = new Pusher("f60e35928b1f4027ab46", {
         cluster: "eu"
@@ -9,8 +26,8 @@ app.controller('EventCtrl', function ($rootScope, $http, ROUTES, $pusher) {
     var my_channel = pusher.subscribe('question.1');
 
     my_channel.bind('App\\Events\\SendQuestionEvent',
-        function(data) {
-            console.log('yo');
+        function (data) {
+            console.log('Fire modal');
         }
     );
 

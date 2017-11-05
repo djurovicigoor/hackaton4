@@ -62,3 +62,18 @@
     opacity: 1;
     transition:0.5s linear all;
 }
+
+.user-btn {
+    background: transparent;
+    line-height: 2.3;
+    font-size: 15px;
+    font-family: "montserratRegular";
+    color: rgb(38, 50, 56);
+}
+
+.user-btn img{
+    width: 29px;
+    height: 29px;
+    border-radius: 50%;
+
+}
