@@ -70,7 +70,7 @@
                             </button>
                             <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
                                 <li role="menuitem"><a href="#!/profile">Profile</a></li>
-                                <li><a href="#!">Logout</a></li>
+                                <li><a  ng-click="logout()" href="#!/login">Logout</a></li>
                             </ul>
                         </div>
 

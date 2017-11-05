@@ -13,6 +13,7 @@ app.controller('LoginCtrl', function ($scope, $http, ROUTES, Notification, $loca
                 $cookies.put('role', response.data.data.roles[0].name);
                 $cookies.put('user', JSON.stringify(response.data.data.user));
                 $location.path('/');
+                location.reload();
             }, function (error) {
                 Notification.error({message: error.data.message, positionY: 'bottom', positionX: 'right', delay: 1000});
             });

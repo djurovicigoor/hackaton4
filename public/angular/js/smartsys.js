@@ -1,11 +1,19 @@
 //Smart System
-app.controller('EventCtrl', function ($scope, $rootScope, $http, ROUTES, $pusher, $cookies) {
+app.controller('EventCtrl', function ($scope, $rootScope, $http, ROUTES, $pusher, $cookies, $location) {
     $scope.isLogged = false;
 
     $scope.user = $cookies.getObject('user');
     console.log($scope.user);
 
-    if($cookies.get('token')) {
+    $scope.logout = function () {
+        $cookies.remove('token');
+        $cookies.remove('users');
+        $cookies.remove('role');
+        $location.path('/login');
+        location.reload();
+    };
+
+    if ($cookies.get('token')) {
         $scope.isLogged = true;
     }
 
@@ -18,7 +26,7 @@ app.controller('EventCtrl', function ($scope, $rootScope, $http, ROUTES, $pusher
     var my_channel = pusher.subscribe('question.1');
 
     my_channel.bind('App\\Events\\SendQuestionEvent',
-        function(data) {
+        function (data) {
             console.log('Fire modal');
         }
     );
