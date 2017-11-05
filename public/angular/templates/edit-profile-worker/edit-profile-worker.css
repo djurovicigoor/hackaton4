@@ -1,0 +1,124 @@
+body {
+    background-color: #f2f4f6;
+}
+.custom-text-left {
+    font-family: montserratRegular;
+    font-size: 14px;
+    color: #b0bec5;
+}
+.custom-text-right a {
+    font-family: montserratSemiBold;
+    font-size: 14px;
+    color: #2962ff;
+    text-decoration: underline;
+}
+
+/*CARDS*/
+
+.first-card {
+    background-color: #ffffff;
+    box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.12);
+    width: 100%;
+    /*height: 300px;*/
+    padding: 20px;
+}
+.card-position {
+    margin-top: 30px;
+}
+.cards-title {
+    font-family: montserratRegular;
+    font-size: 13px;
+    color: #b0bec5;
+    margin-left: 14px;
+}
+.custom-input-group {
+    width: 100%;
+}
+.al-input-group input {
+    border-width: 2px;
+    border-color: #cfd8dc;
+    border-style: solid;
+    border-radius: 2px !important;
+    /*width: 326px !important;*/
+    height: 48px !important;
+
+    font-size: 16px;
+    font-family: montserratRegular;
+    color: #263238;
+    margin-bottom: 20px !important;
+    width: 100%!important;
+}
+.al-input-group input:focus {
+    border-width: 2px;
+    border-color: #cfd8dc;
+    border-style: solid;
+    border-radius: 2px !important;
+    /*width: 326px !important;*/
+    height: 48px !important;
+
+    font-size: 16px;
+    font-family: montserratRegular;
+    color: #263238;
+    margin-bottom: 20px !important;
+    outline: none;
+    box-shadow: none;
+    /*width: 100%!important;*/
+}
+chips {
+    padding-left: 8px;
+    padding-right: 15px;
+}
+.chip-out-focus {
+    border-bottom: 2px solid #cfd8dc!important;
+}
+.chip-in-focus {
+    border-bottom: 2px solid #cfd8dc!important;
+}
+.default-chip {
+    background-color: #eceff1;
+    border-radius: 15px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: max-content;
+    font-family: montserratMedium;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #2962ff;
+    float: left;
+    margin-left: 7px;
+    border: none!important;
+}
+chip-tmpl {
+    margin: 0px;
+}
+.dropdown-menu>.active>a {
+    background-color: #2962ff!important;
+}
+
+.al-input-group input::placeholder {
+    color: #263238;
+    font-family: montserratRegular;
+    font-size: 16px;
+}
+.custom-employes, .custom-employes:focus, .custom-employes:active, .custom-employes:active:focus {
+    height: 42px;
+    font-family: montserratRegular;
+    font-size: 15px;
+    color: #ffffff;
+    background-color: #2962ff!important;
+    /*width: 165px;*/
+    border-radius: 2px;
+    border: 2px solid #2962ff;
+    transition: all 0.3s ease-out;
+    margin-left: 10px;
+    box-shadow: none;
+}
+.custom-employes:hover {
+    background-color: #4577ff!important;
+    border: 2px solid #4577ff;
+}
+.btn-position {
+    text-align: center;
+}

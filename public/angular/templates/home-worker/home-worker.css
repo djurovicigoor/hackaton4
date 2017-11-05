@@ -12,18 +12,23 @@ body {
     color: #2962ff;
     text-decoration: underline;
 }
-/*CARD HEADER*/
+
+/*CARD*/
+
 .card-position {
     margin-top: 30px;
+    margin-bottom: 40px;
 }
-.custom-padding {
-    padding: 22px;
+.card-position1 {
+    margin-top: 30px;
+    /*margin-bottom: 40px;*/
 }
+
 .header-card {
     background-color: #ffffff;
     box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.12);
     width: 100%;
-    height: 200px;
+    height: 350px;
     padding: 22px;
 }
 .card-title {
@@ -31,28 +36,23 @@ body {
     font-size: 28px;
     color: #263238;
 }
-.card-desc {
+.titula {
     font-family: montserratRegular;
     font-size: 15px;
     color: #b0bec5;
 }
-.custom-contact, .custom-contact:focus, .custom-contact:active, .custom-contact:active:focus {
-    /*margin-top: 8px;*/
-    border-radius: 2px;
-    border: 2px solid #263238;
-    font-family: montserratRegular;
-    font-size: 15px;
-    color: #263238;
-    transition: all 0.3s ease-out;
-    background-color: transparent;
-    box-shadow: none;
-    outline: none;
-    height: 42px;
+.linka {
+    width: 60px;
+    margin-left: 40%;
+    border-bottom: 1px solid #cfd8dc;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
-.custom-contact:hover {
-    border-color: #2962ff;
-    background-color: transparent;
-    color: #2962ff;
+.location {
+    font-family: montserratRegular;
+    font-size: 14px;
+    color: #b0bec5;
+    margin-bottom: 20px;
 }
 .custom-employes, .custom-employes:focus, .custom-employes:active, .custom-employes:active:focus {
     height: 42px;
@@ -71,57 +71,40 @@ body {
     background-color: #4577ff!important;
     border: 2px solid #4577ff;
 }
-.mini-card {
-    box-shadow: 0px 8px 29px 0px rgba(0, 0, 0, 0.11);
-    width: 100%;
-    height: 155px;
-    text-align: left;
-    padding: 15px;
-}
-.mini-card-text {
-    font-family: montserratLight;
-    font-size: 16px;
-    color: #263238;
-}
-.mini-card-text span {
-    font-family: montserratLight;
-    font-size: 16px;
-    color: #b3c0c7;
-}
-
-/*BOTTOM CARDS*/
-
-.cards-position {
-    margin-top: 30px;
-    margin-bottom: 40px;
-}
-.card-left {
-    box-shadow: 0px 8px 29px 0px rgba(0, 0, 0, 0.11);
-    width: 100%;
-    height: 700px;
-    padding: 22px;
-    background-color: #ffffff;
-}
-.card-right1 {
-    box-shadow: 0px 8px 29px 0px rgba(0, 0, 0, 0.11);
-    width: 100%;
-    height: 470px;
-    padding: 22px;
-    background-color: #ffffff;
-}
-.card-right2 {
-    margin-top: 30px;
-    box-shadow: 0px 8px 29px 0px rgba(0, 0, 0, 0.11);
-    width: 100%;
-    height: 200px;
-    padding: 22px;
-    background-color: #ffffff;
-}
 .cards-title {
     font-family: montserratRegular;
     font-size: 13px;
-    color: #b0bec5;
+    color: #90a4ae;
     margin-left: 14px;
+}
+.card-desc {
+    font-family: montserratLight;
+    font-size: 15px;
+    color: #b0bec5;
+    line-height: 1.5;
+}
+.custom-chips {
+     background-color: #eceff1;
+     border-radius: 15px;
+     padding-top: 4px;
+     padding-bottom: 4px;
+     padding-left: 10px;
+     padding-right: 10px;
+     width: max-content;
+     font-family: montserratMedium;
+     font-size: 12px;
+     text-transform: uppercase;
+     color: #2962ff;
+     float: left;
+     margin-left: 14px;
+     margin-bottom: 5px;
+ }
+.card-left {
+    box-shadow: 0px 8px 29px 0px rgba(0, 0, 0, 0.11);
+    width: 100%;
+    height: 500px;
+    padding: 22px;
+    background-color: #ffffff;
 }
 .custom-thumbnail {
     width: 70px;
@@ -160,23 +143,34 @@ body {
     text-transform: uppercase;
     text-decoration: none;
 }
-.custom-chips {
-    background-color: #eceff1;
-    border-radius: 15px;
-    padding-top: 4px;
-    padding-bottom: 4px;
-    padding-left: 10px;
-    padding-right: 10px;
-    width: max-content;
-    font-family: montserratMedium;
-    font-size: 12px;
-    text-transform: uppercase;
-    color: #2962ff;
-    float: left;
-    margin-left: 14px;
-    margin-bottom: 5px;
+.card-right1 {
+    box-shadow: 0px 8px 29px 0px rgba(0, 0, 0, 0.11);
+    width: 100%;
+    height: 300px;
+    padding: 22px;
+    background-color: #ffffff;
+    cursor: pointer;
 }
-
+.fake-button {
+    width: 57px;
+    height: 57px;
+    background-color: #2962ff;
+    border-radius: 50px;
+    text-align: center;
+    color: #ffffff;
+    margin-left: 45%;
+    margin-top: 13%;
+}
+.fake-button i {
+    margin-top: 32%;
+    font-size: 22px;
+}
+.play-text {
+    font-family: montserratRegular;
+    font-size: 16px;
+    color: #2962ff;
+    margin-top: 15px;
+}
 .custom-modal-header {
     border: none;
 }

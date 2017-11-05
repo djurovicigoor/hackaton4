@@ -1,0 +1,39 @@
+<div ng-controller="LevelModalCtrl as $ctrl" class="level-modal">
+    <div class="modal-header custom-modal-header">
+        <h3 class="modal-title custom-modal-title" id="modal-title">Questions <span></span></h3>
+    </div>
+    <div >
+        <div class="col-xs-12 text-center">
+            <h4>{{question.content}}</h4>
+        </div>
+        <div class="col-xs-12">
+            <form name="myForm" class="text-center">
+                <label>
+                    <input type="radio" ng-model="checkboxModal" value="1" checked>
+                    1
+                </label>
+                <label>
+                    <input type="radio" ng-model="checkboxModal" value="2">
+                    2
+                </label>
+                <label>
+                    <input type="radio" ng-model="checkboxModal" value="3">
+                    3
+                </label>
+                <label>
+                    <input type="radio" ng-model="checkboxModal" value="4">
+                    4
+                </label>
+                <label>
+                    <input type="radio" ng-model="checkboxModal" value="5">
+                    5
+                </label>
+            </form>
+        </div>
+    </div>
+    <div class="modal-footer custom-modal-footer">
+        <button class="btn level-modal-ok center-block" type="button"  ng-click="submitQuestion()">OK</button>
+        <!--<button class="btn btn-warning" type="button" ng-click="$ctrl.cancel()">Cancel</button>-->
+    </div>
+</div>
+
