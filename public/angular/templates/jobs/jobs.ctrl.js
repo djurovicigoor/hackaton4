@@ -1,4 +1,5 @@
-app.controller('JobsCtrl', function ($scope, $http, ROUTES, $cookies, $location) {
+app.controller('JobsCtrl', function ($scope, $http, ROUTES, $cookies, $location, $rootScope) {
+
     $scope.jobs = [];
     $scope.categories = [];
     $scope.searchText = '';
@@ -64,4 +65,10 @@ app.controller('JobsCtrl', function ($scope, $http, ROUTES, $cookies, $location)
     $scope.goToUrl = function (url) {
         $location.path(url);
     };
+
+    if($rootScope.srch !== '' && $rootScope.srch !== undefined) {
+        $scope.searchText = $rootScope.srch;
+        $scope.searchOnDelay();
+    }
+
 });

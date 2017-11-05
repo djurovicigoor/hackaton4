@@ -40,7 +40,7 @@
                                 <div ng-repeat="category in job.category">
                                     <!--<div class="custom-chips">{{category.name}}</div>-->
                                     <div ng-repeat="subcat in category.sub_categories"
-                                         ng-click="addCatName(subcat.name); $event.stopPropagation();"
+                                         ng-click="addCatName(subcat.name); smartSys([subcat.name]); $event.stopPropagation();"
                                          class="custom-chips">{{subcat.name}}
                                     </div>
                                 </div>
