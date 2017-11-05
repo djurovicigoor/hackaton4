@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <h1 class="al-title text-center">Welcome back, please sign in</h1>
+        </div>
+        <div class="col-xs-11 col-xs-offset-1 col-sm-4 col-sm-offset-4">
+            <form class="al-input-group" name="loginForm" ng-submit="login()">
+                <div class="input-group">
+                    <input class="form-control" type="email" name="email" ng-model="user.email" placeholder="Email" required>
+                </div>
+                <div class="input-group">
+                    <input class="form-control" type="password" name="password" ng-model="user.password" placeholder="Password" required>
+                </div>
+                <button type="submit" class="btn al-continue-btn" ng-disabled="!loginForm.$valid">Continue</button>
+            </form>
+        </div>
+    </div>
+</div>
+

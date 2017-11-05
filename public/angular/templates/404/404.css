@@ -1,0 +1,27 @@
+.custom-404-position {
+    text-align: center;
+    margin-top: 150px;
+}
+.title-404 {
+    margin-top: 60px;
+    font-family: montserratExtraLight;
+    font-size: 30px;
+    color: #263238;
+}
+.custom-404-button, .custom-404-button:focus, .custom-404-button:active, .custom-404-button:active:focus {
+    background-color: #2962ff;
+    color: #ffffff;
+    width: 240px;
+    font-family: montserratRegular;
+    font-size: 16px;
+    height: 55px;
+    border-radius: 3px;
+    transition: all 0.3s ease-out;
+    box-shadow: none;
+    outline: none;
+    margin-top: 25px;
+}
+.custom-404-button:hover {
+    background-color: #4577ff!important;
+    color: #ffffff;
+}

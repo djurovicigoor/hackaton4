@@ -1,0 +1,87 @@
+.al-title {
+    font-size: 46px;
+    font-family: "montserratExtraLight";
+    color: rgb(38, 50, 56);
+    line-height: 1.2;
+    margin-bottom: 30px;
+}
+
+.al-subtitle {
+    font-size: 20px;
+    font-family: "montserratRegular";
+    color: rgb(120, 144, 156);
+    line-height: 1.2;
+}
+
+.al-input-group input {
+    border-width: 2px;
+    border-color: #cfd8dc;
+    border-style: solid;
+    border-radius: 2px !important;
+    width: 326px !important;
+    height: 48px !important;
+
+    font-size: 16px;
+    font-family: montserratRegular;
+    color: #263238;
+    margin-bottom: 20px !important;
+}
+.al-input-group input:focus {
+    border-width: 2px;
+    border-color: #cfd8dc;
+    border-style: solid;
+    border-radius: 2px !important;
+    width: 326px !important;
+    height: 48px !important;
+
+    font-size: 16px;
+    font-family: montserratRegular;
+    color: #263238;
+    margin-bottom: 20px !important;
+    outline: none;
+    box-shadow: none;
+}
+
+.al-input-group input::placeholder {
+    color: #263238;
+    font-family: montserratRegular;
+    font-size: 16px;
+}
+
+.al-continue-btn, .al-continue-btn:hover, .al-continue-btn:focus {
+    font-size: 16px;
+    font-family: "montserratRegular";
+    color: rgb(255, 255, 255);
+    line-height: 1.2;
+    border-radius: 2px;
+    background-color: rgb(41, 98, 255);
+    width: 330px;
+    height: 52px;
+}
+
+.al-mini-subtitle {
+    font-size: 14px;
+    font-family: "montserratRegular";
+    color: rgb(207, 216, 220);
+}
+
+.al-radiobtn {
+    font-size: 12px;
+    color: #b0bec5;
+    width: 165px;
+    height: 44px;
+    line-height: 2.4;
+    text-transform: uppercase;
+    font-family: "montserratSemiBold";
+    background-color: rgb(247, 247, 247);
+    margin-top: 15px;
+    margin-bottom: 25px;
+}
+
+.al-radiobtn.active {
+    border-radius: 2px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 3px 16px 0px rgba(0, 0, 0, 0.12);
+    color: rgb(41, 98, 255);
+}
+

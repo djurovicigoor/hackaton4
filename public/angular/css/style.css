@@ -1,0 +1,79 @@
+/*FONTS*/
+@font-face {
+    font-family: montserratExtraBold;
+    src: url(../Fonts/Montserrat-ExtraBold.ttf);
+}
+@font-face {
+    font-family: montserratBold;
+    src: url(../Fonts/Montserrat-Bold.ttf);
+}
+@font-face {
+    font-family: montserratSemiBold;
+    src: url(../Fonts/Montserrat-SemiBold.ttf);
+}
+@font-face {
+    font-family: montserratMedium;
+    src: url(../Fonts/Montserrat-Medium.ttf);
+}
+@font-face {
+    font-family: montserratRegular;
+    src: url(../Fonts/Montserrat-Regular.ttf);
+}
+@font-face {
+    font-family: montserratLight;
+    src: url(../Fonts/Montserrat-Light.ttf);
+}
+@font-face {
+    font-family: montserratExtraLight;
+    src: url(../Fonts/Montserrat-ExtraLight.ttf);
+}
+/*FONT END*/
+
+.custom-navbar {
+    background-color: #ffffff;
+    border: none;
+}
+.custom-signup, .custom-signup:focus, .custom-signup:active, .custom-signup:active:focus {
+    margin-top: 8px;
+    border-radius: 0px;
+    border: 2px solid #263238;
+    font-family: montserratRegular;
+    font-size: 16px;
+    color: #263238;
+    transition: all 0.3s ease-out;
+    background-color: transparent;
+    box-shadow: none;
+    outline: none;
+}
+.custom-signup:hover {
+    border-color: #2962ff;
+    background-color: #2962ff;
+    color: #ffffff;
+}
+.navbar-default .navbar-nav>li>a {
+    color: #263238!important;
+}
+.custom-navbar-text {
+    font-family: montserratRegular;
+    font-size: 16px;
+}
+
+.fader {
+    opacity: 1;
+    transition:0.5s linear all;
+}
+
+.user-btn {
+    background: transparent;
+    line-height: 2.3;
+    font-size: 15px;
+    font-family: "montserratRegular";
+    color: rgb(38, 50, 56);
+}
+
+.user-btn img{
+    width: 29px;
+    height: 29px;
+    border-radius: 50%;
+
+}
