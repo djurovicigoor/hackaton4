@@ -73,6 +73,18 @@ app.config(['$routeProvider', '$httpProvider', function ($routeProvider, $httpPr
             css: 'angular/templates/edit-profile-hire/edit-profile-hire.css'
         })
 
+        .when('/worker-profile', {
+            templateUrl: 'angular/templates/home-worker/home-worker.html',
+            controller: 'HomeWorkerCtrl',
+            css: 'angular/templates/home-worker/home-worker.css'
+        })
+
+        .when('/edit-profile-worker', {
+            templateUrl: 'angular/templates/edit-profile-worker/edit-profile-worker.html',
+            controller: 'EditProfileWorkerCtrl',
+            css: 'angular/templates/edit-profile-worker/edit-profile-worker.css'
+        })
+
         .otherwise({
             redirectTo: '/404'
         });
