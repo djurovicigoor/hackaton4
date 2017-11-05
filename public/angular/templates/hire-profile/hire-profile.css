@@ -1,0 +1,172 @@
+.custom-text-left {
+    font-family: montserratRegular;
+    font-size: 14px;
+    color: #b0bec5;
+}
+.custom-text-right a {
+    font-family: montserratSemiBold;
+    font-size: 14px;
+    color: #2962ff;
+    text-decoration: underline;
+}
+/*CARD HEADER*/
+.card-position {
+    margin-top: 30px;
+}
+.custom-padding {
+    padding: 22px;
+}
+.header-card {
+    background-color: #ffffff;
+    box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.12);
+    width: 100%;
+    height: 200px;
+    padding: 22px;
+}
+.card-title {
+    font-family: montserratLight;
+    font-size: 28px;
+    color: #263238;
+}
+.card-desc {
+    font-family: montserratRegular;
+    font-size: 15px;
+    color: #b0bec5;
+}
+.custom-contact, .custom-contact:focus, .custom-contact:active, .custom-contact:active:focus {
+    /*margin-top: 8px;*/
+    border-radius: 2px;
+    border: 2px solid #263238;
+    font-family: montserratRegular;
+    font-size: 15px;
+    color: #263238;
+    transition: all 0.3s ease-out;
+    background-color: transparent;
+    box-shadow: none;
+    outline: none;
+    height: 42px;
+}
+.custom-contact:hover {
+    border-color: #2962ff;
+    background-color: transparent;
+    color: #2962ff;
+}
+.custom-employes, .custom-employes:focus, .custom-employes:active, .custom-employes:active:focus {
+    height: 42px;
+    font-family: montserratRegular;
+    font-size: 15px;
+    color: #ffffff;
+    background-color: #2962ff!important;
+    /*width: 165px;*/
+    border-radius: 2px;
+    border: 2px solid #2962ff;
+    transition: all 0.3s ease-out;
+    margin-left: 10px;
+    box-shadow: none;
+}
+.custom-employes:hover {
+    background-color: #4577ff!important;
+    border: 2px solid #4577ff;
+}
+.mini-card {
+    box-shadow: 0px 8px 29px 0px rgba(0, 0, 0, 0.11);
+    width: 100%;
+    height: 155px;
+    text-align: left;
+    padding: 15px;
+}
+.mini-card-text {
+    font-family: montserratLight;
+    font-size: 16px;
+    color: #263238;
+}
+.mini-card-text span {
+    font-family: montserratLight;
+    font-size: 16px;
+    color: #b3c0c7;
+}
+
+/*BOTTOM CARDS*/
+
+.cards-position {
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+.card-left {
+    box-shadow: 0px 8px 29px 0px rgba(0, 0, 0, 0.11);
+    width: 100%;
+    height: 700px;
+    padding: 22px;
+}
+.card-right1 {
+    box-shadow: 0px 8px 29px 0px rgba(0, 0, 0, 0.11);
+    width: 100%;
+    height: 470px;
+    padding: 22px;
+}
+.card-right2 {
+    margin-top: 30px;
+    box-shadow: 0px 8px 29px 0px rgba(0, 0, 0, 0.11);
+    width: 100%;
+    height: 200px;
+    padding: 22px;
+}
+.cards-title {
+    font-family: montserratRegular;
+    font-size: 13px;
+    color: #b0bec5;
+    margin-left: 14px;
+}
+.custom-thumbnail {
+    width: 70px;
+    height: 70px;
+    background-color: #b0bec5;
+    text-align: center;
+    padding: 15px;
+    /*margin-left: 14px;*/
+}
+.custom-thumbnail p {
+    font-family: montserratRegular;
+    font-size: 14px;
+    color: #ffffff;
+}
+.list-title {
+    font-family: montserratRegular;
+    font-size: 16px;
+    color: #263238;
+    margin-top: 10px;
+}
+.custom-title-padding {
+    padding-left: 0px;
+}
+.list-position {
+    margin-top: 10px;
+}
+.cards-footer {
+    margin-left: 41%;
+}
+.cards-footer a {
+    bottom: 30px;
+    position: absolute;
+    font-family: montserratRegular;
+    font-size: 13px;
+    color: #b0bec5;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+.custom-chips {
+    background-color: #eceff1;
+    border-radius: 15px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: max-content;
+    font-family: montserratMedium;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #2962ff;
+    float: left;
+    margin-left: 14px;
+    margin-bottom: 5px;
+}
