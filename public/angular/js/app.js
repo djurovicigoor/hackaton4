@@ -5,7 +5,8 @@ var app = angular.module('app', [
     'ngAnimate',
     'ui-notification',
     'ui.bootstrap',
-    'pusher-angular'
+    'pusher-angular',
+    'angular.chips'
 ]);
 
 /**
