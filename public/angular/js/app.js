@@ -61,6 +61,12 @@ app.config(['$routeProvider', '$httpProvider', function ($routeProvider, $httpPr
             css: 'angular/templates/hire-profile/hire-profile.css'
         })
 
+        .when('/single-view', {
+            templateUrl: 'angular/templates/single-view/single-view.html',
+            controller: 'SingleViewCtrl',
+            css: 'angular/templates/single-view/single-view.css'
+        })
+
         .otherwise({
             redirectTo: '/404'
         });
