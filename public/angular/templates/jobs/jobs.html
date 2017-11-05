@@ -2,7 +2,9 @@
     <div class="row">
         <div class="col-lg-12 custom-position">
             <div class="input-group">
-                <input type="text" class="form-control custom-search-input" placeholder="| Search for dream job..." aria-label="...">
+                <input ng-model='searchText'
+                       ng-model-options='{ debounce: 1000 }'
+                       ng-change="searchOnDelay()" type="text" class="form-control custom-search-input" placeholder="| Search for dream job..." aria-label="...">
                 <div class="input-group-btn" uib-dropdown is-open="status.isopen">
                     <button id="single-button" type="button" class="btn btn-primary custom-search-button"
                             uib-dropdown-toggle ng-disabled="disabled">
@@ -28,7 +30,7 @@
     </div><!-- /.row -->
     <p class="title-text">Result for Design</p>
 
-    <div class="row card-position">
+    <div ng-if="jobs.data" class="row card-position fader">
         <a href="#" ng-repeat="job in jobs.data"  ng-click="smartSys(job.catArray)">
             <div class="col-sm-6 col-md-4">
                 <div class="thumbnail custom-thumbnail">

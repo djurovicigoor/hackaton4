@@ -57,3 +57,8 @@
     font-family: montserratRegular;
     font-size: 16px;
 }
+
+.fader {
+    opacity: 1;
+    transition:0.5s linear all;
+}
