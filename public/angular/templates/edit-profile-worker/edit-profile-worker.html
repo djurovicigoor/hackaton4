@@ -1,0 +1,101 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 text-left custom-text-left">
+            Profile view
+        </div>
+        <div class="col-md-6 text-right custom-text-right">
+            <a href="#!/worker-profile">Close</a>
+        </div>
+    </div>
+    <div class="row card-position">
+        <div class="col-md-12">
+            <div class="first-card">
+                <div class="row">
+                    <p class="cards-title">BASIC INFORMATIONS</p>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <form class="al-input-group" name="loginForm">
+                            <div class="input-group custom-input-group">
+                                <input class="form-control" type="email" name="email"  placeholder="emailcompany@example.com">
+                            </div>
+                            <div class="input-group custom-input-group">
+                                <input class="form-control" type="text" name="password" placeholder="Location">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-md-6">
+                        <form class="al-input-group" name="loginForm">
+                            <div class="input-group custom-input-group">
+                                <input class="form-control" type="text" name="email"  placeholder="Full name">
+                            </div>
+                            <div class="input-group custom-input-group">
+                                <input class="form-control" type="text" name="password" placeholder="Job position">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <form class="al-input-group" name="loginForm">
+                            <div class="input-group custom-input-group">
+                                <input class="form-control" type="text" name="email"  placeholder="About me">
+                            </div>
+                            <div class="input-group custom-input-group">
+                                <input class="form-control" type="text" name="password" placeholder="Youtube video link of your video cv">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row card-position">
+        <div class="col-md-12">
+            <div class="first-card">
+                <div class="row">
+                    <p class="cards-title">SKILLS</p>
+                </div>
+                <div class="row">
+                    <chips ng-model="skills">
+                        <chip-tmpl>
+                            <div class="default-chip">
+                                {{chip}}
+                                <span class="glyphicon glyphicon-remove" remove-chip></span>
+                            </div>
+                        </chip-tmpl>
+                        <input class="input-chip" ng-model-control ng-model="typeaheadmodel" uib-typeahead="skill for skill in availableSkills| filter:$viewValue"></input>
+                    </chips>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row card-position">
+        <div class="col-md-12">
+            <div class="first-card">
+                <div class="row">
+                    <p class="cards-title">SECURITY INFORMATIONS</p>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <form class="al-input-group" name="loginForm">
+                            <div class="input-group custom-input-group">
+                                <input class="form-control" type="password" name="email"  placeholder="New password">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-md-6">
+                        <form class="al-input-group" name="loginForm">
+                            <div class="input-group custom-input-group">
+                                <input class="form-control" type="password" name="email"  placeholder="Confirm new password">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row card-position btn-position">
+        <a type="button" class="btn btn-primary custom-employes">Save changes</a>
+    </div>
+</div>

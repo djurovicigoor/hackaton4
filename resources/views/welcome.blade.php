@@ -11,10 +11,12 @@
     <link rel="stylesheet" href="{{asset('node_modules/angular-ui-bootstrap/dist/ui-bootstrap-csp.css')}}">
     <link rel="stylesheet" href="{{asset('node_modules/font-awesome/css/font-awesome.min.css')}}">
 
+    <link rel="stylesheet" href="{{asset('node_modules/angular-chips/dist/main.css')}}">
+
     <link rel="stylesheet" href="{{asset('angular/css/style.css')}}">
 
 </head>
-<body ng-controller="EventCtrl">
+<body ng-controller="EventCtrl as $ctrl">
 <nav style="padding-top: 10px; padding-bottom: 15px;" class="navbar navbar-default custom-navbar">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -65,12 +67,13 @@
                         <div class="btn-group" uib-dropdown is-open="status.isopen">
                             <button id="single-button" type="button" class="btn user-btn" uib-dropdown-toggle
                                     >
-                                <img src="angular/img/user.png" alt="">
+                                <img ng-if="!isWorker" src="angular/img/hireProfile.png" alt="">
+                                <img ng-if="isWorker" src="angular/img/user.png" alt="">
                                  @{{user.name}} <span class="caret"></span>
                             </button>
                             <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
-                                <li role="menuitem"><a href="#!/profile">Profile</a></li>
-                                <li><a href="#!">Logout</a></li>
+                                <li role="menuitem"><a ng-if="role == 'Worker'" href="#!/worker-profile">Profile</a><a ng-if="role == 'Hirer'" href="#!/hire-profile">Profile</a</li>
+                                <li><a  ng-click="logout()" href="#!/login">Logout</a></li>
                             </ul>
                         </div>
 
@@ -94,6 +97,8 @@
 <script src="{{asset('node_modules/angular-animate/angular-animate.min.js')}}"></script>
 <script src="{{asset('node_modules/angular-ui-notification/dist/angular-ui-notification.min.js')}}"></script>
 <script src="{{asset('node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js')}}"></script>
+<script src="{{asset('node_modules/angular-chips/dist/angular-chips.min.js')}}"></script>
+
 <script src="https://js.pusher.com/4.2/pusher.min.js"></script>
 <script src="{{asset('node_modules/pusher-angular/lib/pusher-angular.min.js')}}"></script>
 
@@ -115,6 +120,11 @@
 <script src="{{asset('angular/templates/modal/modal.ctrl.js')}}"></script>
 <script src="{{asset('angular/templates/single-view/single-view.ctrl.js')}}"></script>
 <script src="{{asset('angular/templates/edit-profile-hire/edit-profile-hire.ctrl.js')}}"></script>
+<script src="{{asset('angular/templates/level-modal/level-modal.ctrl.js')}}"></script>
+
+<script src="{{asset('angular/templates/home-worker/home-worker.ctrl.js')}}"></script>
+<script src="{{asset('angular/templates/modal-worker/modal-worker.ctrl.js')}}"></script>
+<script src="{{asset('angular/templates/edit-profile-worker/edit-profile-worker.ctrl.js')}}"></script>
 <!-- Smart system -->
 <script src="{{asset('angular/js/smartsys.js')}}"></script>
 </body>

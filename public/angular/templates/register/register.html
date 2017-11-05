@@ -17,7 +17,7 @@
 
             <form class="al-input-group" name="registerForm" ng-submit="register()">
                 <div class="input-group">
-                    <input class="form-control" type="text" name="name" ng-model="user.name" placeholder="Full name" required>
+                    <input class="form-control" type="text" name="name" ng-model="user.name" placeholder="{{user.role == 'WORKER'? 'Full' : 'Company'}} name" required>
                 </div>
                 <div class="input-group">
                     <input class="form-control" type="email" name="email" ng-model="user.email" placeholder="Email" required>

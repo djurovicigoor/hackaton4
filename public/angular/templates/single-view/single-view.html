@@ -1,1 +1,125 @@
-<p>pera</p>
+<div class="container-fluid photobg">
+    <div class="container ">
+        <div class="col-md-12">
+            <div class="card-left">
+                <div class="col-md-12"><h2 class="title-job"> JOB DESCRIPTION </h2></div>
+                <div class="col-md-12">
+                    <p class="description-job">
+                        Namics was founded in 1995 as a spinoff of the University of St. Gallen (Switzerland) and has
+                        since been considered the think tank of the Swiss web business. Our headquarters are in St.
+                        Gallen and that is also where the largest part of our more than 460 employees is based. Our
+                        Belgrade office was founded in 2014 and is ever-growing.
+                        <br><br>
+                        Interdisciplinary team collaboration is important to us and therefore we have no individual
+                        offices, but open spaces with plenty of room for sharing and brainstorming. You are quickly in
+                        the office floors of the other teams, or meeting up to exchange ideas over a coffee at the cafes
+                        in beautiful Knez Mihailova.
+                        <br><br>
+                        For more exciting and award-winning projects, such as realizing the Victorinox Webshop or the
+                        Mercedes Benz website, we are looking for an entry-level programmer that is eager to learn and
+                        develop his expertise together with our great team.
+                        <br><br>
+                        The development of complex web applications in the Java environment, and the customer-specific
+                        implementation of Java based CMS’s is one of our core competencies. Join our interdisciplinary
+                        team of designers, consultants and software engineers and help develop integrated solutions
+                        based on software such as AEM or hybris.
+                        <br><br>
+                        The whole team is looking forward to welcoming established and innovative colleagues.
+                    </p></div>
+            </div>
+        </div>
+        <div class="row content-center">
+            <div class="col-md-6 col-sm-6 col-xs-12 left-content">
+                <a href="#!/hire-profile/{{job.hirer.id}}">
+                    <div class="col-md-12">
+                        <img src="angular/img/hire-single-view.png" alt=""> <span> {{job.hirer.name}} </span>
+                    </div>
+                </a>
+                <div class="col-md-12 col-sm-6 col-xs-12 title-text">
+                    <span>{{job.name}}</span>
+                </div>
+                <div class="col-md-12 col-sm-6 col-xs-12 chips-position">
+                    <div>
+                        <!--<div class="custom-chips">{{category.name}}</div>-->
+                        <div ng-repeat="cat in job.category[0].sub_categories" class="custom-chips">{{cat.name}}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-12 right-content">
+                <a href="#!/jobs">< Back</a>
+            </div>
+        </div>
+    </div>
+    <div class="container content-2">
+        <div class="col-md-12 test">
+            <div class="card-left-2">
+                <div class="col-md-12"><h1 class="title-job"> TASKS </h2></div>
+                <div class="col-md-12">
+                    <p class="description-job">
+                        The focus of your activities will be the development of content management systems or online
+                        shops based on AEM or hybris. We work closely together with our customers and develop
+                        tailor­made solutions through supporting in the design phase and then implementing them.
+                        <br><br>
+                        In addition to the development of web applications, working with databases and some interaction
+                        with our customers are included to your areas of responsibility. Your range of tasks covers the
+                        entire software development process – from analysis through execution. Your customers are large
+                        B2B & B2C companies or organizations with strong Web-affinity.
+                        <!-- <br><br>
+                        For more exciting and award-winning projects, such as realizing the Victorinox Webshop or the Mercedes Benz website, we are looking for an entry-level programmer that is eager to learn and develop his expertise together with our great team.
+                        <br><br>
+                        The development of complex web applications in the Java environment, and the customer-specific implementation of Java based CMS’s is one of our core competencies. Join our interdisciplinary team of designers, consultants and software engineers and help develop integrated solutions based on software such as AEM or hybris.
+                        <br><br>
+                        The whole team is looking forward to welcoming established and innovative colleagues. -->
+                    </p></div>
+            </div>
+        </div>
+        <div class="col-md-12 test">
+            <div class="card-left-3">
+                <div class="col-md-12"><h1 class="title-job"> JOB DESCRIPTION </h2></div>
+                <div class="col-md-12">
+                    <p class="description-job">
+                        - 2+ Years experience with Java based content management systems
+                        <br>
+                        - University or college degree in computer science or business computer science
+                        <br>
+                        Very good knowledge of current web technologies (Java/J2EE) as well as experience with standard
+                        software frameworks (Spring)
+                        <br>
+                        - AEM experience is a plus
+                        <br>
+                        - Knowledge in the areas of SQL, WebServices (SOA), XML, XSL, JavaScript, HTML, AJAX
+                        <br>
+                        - Experience within development environments such as Eclipse or IntelliJ
+                        <br>
+                        - Strong personal initiative and willingness to learn
+                        <br>
+                        - Fun working in an interdisciplinary team
+                        <br>
+                        - Tolerant, open and ability to discuss controverse problems
+                        <br>
+                        - Very good English skills
+                        <br><br>
+                        Interest. Application. Now. To apply, send us your complete application documents, including
+                        detailed cover letter and CV (mandatory) by e-mail. We look forward to meeting you.
+                    </p></div>
+                <div class="col-12-md photo-style">
+                    <div class="col-md-6 padding-img">
+                        <img src="angular/img/img-single-1.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="col-md-6 down-content">
+                <h1> You can apply until 30/11/17 </h1>
+                <br>
+                <a href="#" type="button" class="btn btn-default custom-contact">Do you have any questions?</a>
+            </div>
+            <div class="col-md-6 down-content">
+                <h1 class="float-right"> Location | Beograd </h1>
+                <br>
+                <a type="button" class="btn btn-primary custom-employes" ng-click="$ctrl.open()">Apply for this job</a>
+            </div>
+        </div>
+    </div>
+</div>

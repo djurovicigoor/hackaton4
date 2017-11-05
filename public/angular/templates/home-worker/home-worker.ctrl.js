@@ -1,6 +1,6 @@
-app.controller('HireProfileCtrl', function ($scope, $uibModal, ROUTES, $http, $routeParams) {
+app.controller('HomeWorkerCtrl', function ($scope, $uibModal) {
     var $ctrl = this;
-    $scope.company = [];
+
     $ctrl.animationsEnabled = true;
 
     $ctrl.open = function (size, parentSelector) {
@@ -10,8 +10,8 @@ app.controller('HireProfileCtrl', function ($scope, $uibModal, ROUTES, $http, $r
             animation: $ctrl.animationsEnabled,
             ariaLabelledBy: 'modal-title',
             ariaDescribedBy: 'modal-body',
-            templateUrl: 'angular/templates/modal/modal.html',
-            controller: 'ModalDemoCtrl',
+            templateUrl: 'angular/templates/modal-worker/modal-worker.html',
+            controller: 'ModalWorkerDemoCtrl',
             controllerAs: '$ctrl',
             size: size,
             appendTo: parentElem,
@@ -35,15 +35,4 @@ app.controller('HireProfileCtrl', function ($scope, $uibModal, ROUTES, $http, $r
     $ctrl.cancel = function () {
         $ctrl.dismiss({$value: 'cancel'});
     };
-
-
-    $scope.getCompanyData = function () {
-        $http.get(ROUTES.api + 'user/' + $routeParams.id)
-            .then(function (response) {
-                console.log(response);
-                $scope.company = response.data.data;
-            }, function (error) {
-            });
-    };
-    $scope.getCompanyData();
 });

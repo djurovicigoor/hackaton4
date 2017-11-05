@@ -5,7 +5,8 @@ var app = angular.module('app', [
     'ngAnimate',
     'ui-notification',
     'ui.bootstrap',
-    'pusher-angular'
+    'pusher-angular',
+    'angular.chips'
 ]);
 
 /**
@@ -55,13 +56,13 @@ app.config(['$routeProvider', '$httpProvider', function ($routeProvider, $httpPr
             css: 'angular/templates/hire/hire.css'
         })
 
-        .when('/hire-profile', {
+        .when('/hire-profile/:id', {
             templateUrl: 'angular/templates/hire-profile/hire-profile.html',
             controller: 'HireProfileCtrl',
             css: 'angular/templates/hire-profile/hire-profile.css'
         })
 
-        .when('/single-view', {
+        .when('/single-view/:id', {
             templateUrl: 'angular/templates/single-view/single-view.html',
             controller: 'SingleViewCtrl',
             css: 'angular/templates/single-view/single-view.css'
@@ -71,6 +72,18 @@ app.config(['$routeProvider', '$httpProvider', function ($routeProvider, $httpPr
             templateUrl: 'angular/templates/edit-profile-hire/edit-profile-hire.html',
             controller: 'EditProfileHireCtrl',
             css: 'angular/templates/edit-profile-hire/edit-profile-hire.css'
+        })
+
+        .when('/worker-profile', {
+            templateUrl: 'angular/templates/home-worker/home-worker.html',
+            controller: 'HomeWorkerCtrl',
+            css: 'angular/templates/home-worker/home-worker.css'
+        })
+
+        .when('/edit-profile-worker', {
+            templateUrl: 'angular/templates/edit-profile-worker/edit-profile-worker.html',
+            controller: 'EditProfileWorkerCtrl',
+            css: 'angular/templates/edit-profile-worker/edit-profile-worker.css'
         })
 
         .otherwise({

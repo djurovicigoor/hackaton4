@@ -5,9 +5,13 @@ app.controller('JobsCtrl', function ($scope, $http, ROUTES, $cookies, $location,
     $scope.searchText = '';
     $scope.categoryName = '';
     $scope.searchApi = 'search/job';
+    $scope.role = $cookies.get('role');
+    console.log($scope.role);
 
-    if ($cookies.get('token')) {
+    if ($scope.role == 'Worker') {
         $scope.searchApi = 'search/job/smart'
+    } else {
+        $scope.searchApi = 'search/user/smart'
     }
 
     $scope.getJobs = function (page) {
@@ -28,7 +32,12 @@ app.controller('JobsCtrl', function ($scope, $http, ROUTES, $cookies, $location,
     };
     $scope.getJobs(1);
     $scope.searchOnDelay = function () {
-        $scope.searchApi = 'search/job';
+        if ($scope.role == 'Worker') {
+            $scope.searchApi = 'search/job'
+        } else {
+            $scope.searchApi = 'search/user'
+        }
+        // $scope.searchApi = 'search/job';
         $http.post(ROUTES.api + $scope.searchApi, {query: $scope.searchText + ' ' + $scope.categoryName})
             .then(function (response) {
                 $scope.jobs = response.data.data;

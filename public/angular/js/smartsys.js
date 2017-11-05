@@ -1,12 +1,24 @@
 //Smart System
-app.controller('EventCtrl', function ($scope, $rootScope, $http, ROUTES, $pusher, $cookies) {
+app.controller('EventCtrl', function ($scope, $rootScope, $http, ROUTES, $pusher, $cookies, $location, $uibModal) {
     $scope.isLogged = false;
 
     $scope.user = $cookies.getObject('user');
-    console.log($scope.user);
+    $scope.role = $cookies.get('role');
+    $scope.isWorker = false;
+    $scope.logout = function () {
+        $cookies.remove('token');
+        $cookies.remove('users');
+        $cookies.remove('role');
+        $location.path('/login');
+        location.reload();
+    };
 
-    if($cookies.get('token')) {
+    if ($cookies.get('token')) {
         $scope.isLogged = true;
+    }
+
+    if($cookies.get('role') === 'Worker') {
+        $scope.isWorker = true;
     }
 
     //pusher
@@ -14,14 +26,38 @@ app.controller('EventCtrl', function ($scope, $rootScope, $http, ROUTES, $pusher
         cluster: "eu"
     });
     var pusher = $pusher(client);
+    var $ctrl = this;
 
-    var my_channel = pusher.subscribe('question.1');
+    $ctrl.animationsEnabled = true;
+    $ctrl.open = function (size, parentSelector) {
+        var parentElem = parentSelector ?
+            angular.element($document[0].querySelector('.modal-demo ' + parentSelector)) : undefined;
+        var modalInstance = $uibModal.open({
+            animation: $ctrl.animationsEnabled,
+            ariaLabelledBy: 'modal-title',
+            ariaDescribedBy: 'modal-body',
+            templateUrl: 'angular/templates/level-modal/level-modal.html',
+            controller: 'LevelModalCtrl',
+            controllerAs: '$ctrl',
+            size: size,
+            appendTo: parentElem,
+            resolve: {
+                items: function () {
+                    return $ctrl.items;
+                }
+            }
+        });
+    };
+    if($scope.user) {
+        var my_channel = pusher.subscribe('question.' + $scope.user.id);
 
-    my_channel.bind('App\\Events\\SendQuestionEvent',
-        function(data) {
-            console.log('Fire modal');
-        }
-    );
+        my_channel.bind('App\\Events\\SendQuestionEvent',
+            function (data) {
+                console.log(data);
+                $ctrl.open();
+                $rootScope.question = data.question;
+            });
+    }
 
     $rootScope.smartSys = function (keys) {
         var eventData = {
