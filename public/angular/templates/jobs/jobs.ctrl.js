@@ -7,7 +7,7 @@ app.controller('JobsCtrl', function ($scope, $http, ROUTES, $cookies, $location,
     $scope.searchApi = 'search/job';
 
     if ($cookies.get('token')) {
-        $scope.searchApi = 'search/job/smart'
+        $scope.searchApi = 'search/user/smart'
     }
 
     $scope.getJobs = function (page) {
@@ -28,7 +28,7 @@ app.controller('JobsCtrl', function ($scope, $http, ROUTES, $cookies, $location,
     };
     $scope.getJobs(1);
     $scope.searchOnDelay = function () {
-        $scope.searchApi = 'search/job';
+        $scope.searchApi = 'search/user';
         $http.post(ROUTES.api + $scope.searchApi, {query: $scope.searchText + ' ' + $scope.categoryName})
             .then(function (response) {
                 $scope.jobs = response.data.data;
