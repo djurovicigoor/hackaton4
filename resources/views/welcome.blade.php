@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="{{asset('angular/css/style.css')}}">
 
 </head>
-<body ng-controller="EventCtrl">
+<body ng-controller="EventCtrl as $ctrl">
 <nav style="padding-top: 10px; padding-bottom: 15px;" class="navbar navbar-default custom-navbar">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -115,6 +115,8 @@
 <script src="{{asset('angular/templates/modal/modal.ctrl.js')}}"></script>
 <script src="{{asset('angular/templates/single-view/single-view.ctrl.js')}}"></script>
 <script src="{{asset('angular/templates/edit-profile-hire/edit-profile-hire.ctrl.js')}}"></script>
+<script src="{{asset('angular/templates/level-modal/level-modal.ctrl.js')}}"></script>
+
 <!-- Smart system -->
 <script src="{{asset('angular/js/smartsys.js')}}"></script>
 </body>
