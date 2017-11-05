@@ -2,16 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\SmartAttr\StoreSmartAttrRequest;
+use App\Answer;
+use App\Http\Requests\Answer\StoreAnswerRequest;
+use App\Question;
 use App\SmartAttribute;
 use Illuminate\Http\Request;
 
-class SmartAttributes extends Controller {
-	
-	public function __construct() {
-		$this->middleware( 'jwt.auth' );
-	}
-	
+class QuestionController extends Controller {
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -21,33 +18,38 @@ class SmartAttributes extends Controller {
 		//
 	}
 	
-	
 	/**
 	 * Store a newly created resource in storage.
 	 *
 	 * @param  \Illuminate\Http\Request $request
 	 * @return \Illuminate\Http\Response
 	 */
-	public function store( StoreSmartAttrRequest $request ) {
+	public function store( StoreAnswerRequest $request ) {
 		$user = $request->user();
-		
-		$smartkeys = $request->get( 'smartkeys' );
-		foreach($smartkeys as $value) {
-			$smartAttr = SmartAttribute::where( ['key'     => $value,
+		$answer           = new Answer;
+		$answer->answered = $request->get( 'answered' );
+		$answer->question()->associate( Question::find( $request->get( 'question_id' ) ) );
+		$answer->user()->associate($user);
+		if($answer->save()) {
+			
+			$smartAttr = SmartAttribute::where( ['key'     => $answer->answered,
 												 'user_id' => $user->id,
 			] )->first();
 			if($smartAttr) {
-				$smartAttr->value = $smartAttr->value + 1;
+				$smartAttr->value = $smartAttr->value + 5;
 				$smartAttr->save();
 			} else {
 				$newSmartAttr      = new SmartAttribute;
-				$newSmartAttr->key = $value;
+				$newSmartAttr->key = $answer->answered;
 				$newSmartAttr->user()->associate( $user );
 				$newSmartAttr->save();
 			}
+			
+			return response()->customResponse( 200, 'Success', $answer );
+		} else {
+			return response()->customResponse( 400, 'Success', NULL );
+			
 		}
-		
-		return response()->customResponse( 200, 'Success', NULL );
 	}
 	
 	/**

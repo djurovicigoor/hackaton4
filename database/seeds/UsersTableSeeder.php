@@ -77,5 +77,16 @@ class UsersTableSeeder extends Seeder {
 			$newUser->attachRole( $userWorker );
 		}
 		
+		for($i=1; $i<=50; $i++){
+			$newUser = User::create( [
+				'name'     => 'User'.$i,
+				'email'    => 'user'.$i.'@mail.com',
+				'password' => bcrypt( 'password' ),
+			] );
+			
+			$newUser->attachRole( $userWorker );
+		}
+		
+		
 	}
 }

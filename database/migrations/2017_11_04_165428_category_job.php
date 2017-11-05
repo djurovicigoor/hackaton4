@@ -12,8 +12,12 @@ class CategoryJob extends Migration {
 	 */
 	public function up() {
 		Schema::create( 'category_job', function( Blueprint $table ) {
-			$table->integer( 'category_id' );
-			$table->integer( 'job_id' );
+			$table->unsignedInteger( 'category_id' );
+			$table->unsignedInteger( 'job_id' );
+			
+			$table->foreign( 'category_id' )->references( 'id' )->on( 'categories' )->onDelete( 'cascade' )->onUpdate( 'cascade' );
+			$table->foreign( 'job_id' )->references( 'id' )->on( 'jobs' )->onDelete( 'cascade' )->onUpdate( 'cascade' );
+			
 		} );
 	}
 	

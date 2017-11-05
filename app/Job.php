@@ -18,9 +18,9 @@ class Job extends Model {
 	protected $searchable = [
 		
 		'columns' => [
-			'jobs.name'       => 10,
-			'categories.name' => 8,
-			'sub_categories.name' => 8,
+			'jobs.name'       => 2,
+			'categories.name' => 3,
+			'sub_categories.name' => 10,
 		],
 		'joins'   => [
 			'category_job' => ['jobs.id','category_job.job_id',],
@@ -48,9 +48,8 @@ class Job extends Model {
 	];
 	
 	public function category() {
-		return $this->belongsToMany( Category::class, 'category_job', 'category_id', 'job_id' );
+		return $this->belongsToMany( Category::class, 'category_job', 'job_id', 'category_id' );
 	}
-	
 	public function hirer() {
 		return $this->belongsTo( User::class, 'hirer_id', 'id' );
 	}

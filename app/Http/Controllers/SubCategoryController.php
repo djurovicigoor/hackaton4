@@ -2,25 +2,30 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\SmartAttr\StoreSmartAttrRequest;
-use App\SmartAttribute;
+use App\SubCategory;
 use Illuminate\Http\Request;
 
-class SmartAttributes extends Controller {
-	
-	public function __construct() {
-		$this->middleware( 'jwt.auth' );
-	}
-	
+class SubCategoryController extends Controller {
 	/**
 	 * Display a listing of the resource.
 	 *
 	 * @return \Illuminate\Http\Response
 	 */
 	public function index() {
-		//
+		$subCategories = SubCategory::all();
+		
+		return response()->customResponse( 200, 'Success', $subCategories );
+		
 	}
 	
+	/**
+	 * Show the form for creating a new resource.
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function create() {
+		//
+	}
 	
 	/**
 	 * Store a newly created resource in storage.
@@ -28,26 +33,8 @@ class SmartAttributes extends Controller {
 	 * @param  \Illuminate\Http\Request $request
 	 * @return \Illuminate\Http\Response
 	 */
-	public function store( StoreSmartAttrRequest $request ) {
-		$user = $request->user();
-		
-		$smartkeys = $request->get( 'smartkeys' );
-		foreach($smartkeys as $value) {
-			$smartAttr = SmartAttribute::where( ['key'     => $value,
-												 'user_id' => $user->id,
-			] )->first();
-			if($smartAttr) {
-				$smartAttr->value = $smartAttr->value + 1;
-				$smartAttr->save();
-			} else {
-				$newSmartAttr      = new SmartAttribute;
-				$newSmartAttr->key = $value;
-				$newSmartAttr->user()->associate( $user );
-				$newSmartAttr->save();
-			}
-		}
-		
-		return response()->customResponse( 200, 'Success', NULL );
+	public function store( Request $request ) {
+		//
 	}
 	
 	/**

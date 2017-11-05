@@ -15,5 +15,7 @@ class DatabaseSeeder extends Seeder {
 		$this->call( SubCategoryTableSeeder::class );
 		$this->call( JobTableSeeder::class );
 		$this->call( SmartAttibute::class );
+		$this->call( CategoryUserTableSeeder::class );
+		$this->call( QuestionTableSeeder::class );
 	}
 }

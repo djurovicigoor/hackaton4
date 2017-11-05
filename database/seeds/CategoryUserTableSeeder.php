@@ -12,7 +12,7 @@ class CategoryUserTableSeeder extends Seeder {
 		$categories = \App\Category::all();
 		
 		$categories->each(function($value){
-		
+			$value->users()->attach(rand(3,4));
 		});
 	}
 }

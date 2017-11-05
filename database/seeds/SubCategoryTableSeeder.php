@@ -64,16 +64,23 @@ class SubCategoryTableSeeder extends Seeder {
 		] );
 		
 		$web->each( function( $value, $key ) {
-			$subCategory       = new SubCategory;
-			$subCategory->name = $value;
-			$subCategory->category()->associate( Category::find( 1 ) );
-			$subCategory->save();
+			if(rand(0,2)){
+				$subCategory       = new SubCategory;
+				$subCategory->name = $value;
+				$subCategory->category()->associate( Category::find( 1 ) );
+				$subCategory->save();
+			}
 		} );
 		$mobile->each( function( $value, $key ) {
-			$subCategory       = new SubCategory;
+			if(rand(0,2)){
+				$subCategory       = new SubCategory;
+				$subCategory->name = $value;
+				$subCategory->category()->associate( Category::find( 2 ) );
+				$subCategory->save();$subCategory       = new SubCategory;
 			$subCategory->name = $value;
 			$subCategory->category()->associate( Category::find( 2 ) );
 			$subCategory->save();
+			}
 		} );
 		$desktop->each( function( $value, $key ) {
 			$subCategory       = new SubCategory;

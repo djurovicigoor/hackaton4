@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class JobController extends Controller {
 	
 	public function __construct() {
-		$this->middleware( 'jwt.auth');
+		$this->middleware( 'jwt.auth', ['except' => ['index']] );
 	}
 	
 	/**
@@ -18,7 +18,9 @@ class JobController extends Controller {
 	 * @return \Illuminate\Http\Response
 	 */
 	public function index() {
-		//
+		$jobs = Job::with( 'category.subCategories' , 'hirer')->paginate( 9 );
+		return response()->customResponse( 200, 'Success', $jobs );
+		
 	}
 	
 	/**
@@ -39,11 +41,12 @@ class JobController extends Controller {
 	public function store( JobRequest $request ) {
 		$job = new Job;
 		$job->fill( $request->all() );
-		$job->hirer()->associate($request->user());
+		$job->hirer()->associate( $request->user() );
 		if($job->save()) {
-			if($request->file('file')){
-				$job->file($request->file('file') , 2 , $request->user());
+			if($request->file( 'file' )) {
+				$job->file( $request->file( 'file' ), 2, $request->user() );
 			}
+			
 			return response()->customResponse( 200, 'Success', $job );
 		} else {
 			return response()->customResponse( 400, 'Woops! Something went wrong!', NULL, 'logout_error' );
@@ -89,15 +92,5 @@ class JobController extends Controller {
 	 */
 	public function destroy( Job $job ) {
 		//
-	}	/**
-	 * Remove the specified resource from storage.
-	 *
-	 * @param  \App\Job $job
-	 * @return \Illuminate\Http\Response
-	 */
-	public function search( Request $request) {
-		$jobs = Job::search($request->get('query'))->with('category.subCategories')->get();
-		return response()->customResponse( 200, 'Success', $jobs );
-		
 	}
 }

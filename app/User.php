@@ -14,19 +14,19 @@ class User extends Authenticatable {
 	use FileTrait;
 	use SearchableTrait;
 	
-/*	protected $searchable = [
+	protected $searchable = [
 		
 		'columns' => [
-			'user.name'       => 10,
+			'users.name'       => 10,
 			'categories.name' => 8,
 			'sub_categories.name' => 8,
 		],
 		'joins'   => [
-			'category_job' => ['jobs.id','category_job.job_id',],
-			'categories' => ['category_job.category_id','categories.id',],
+			'category_user' => ['users.id','category_user.user_id',],
+			'categories' => ['category_user.category_id','categories.id',],
 			'sub_categories' => ['sub_categories.category_id','categories.id',],
 		],
-	];*/
+	];
 	
 	/**
 	 * The attributes that are mass assignable.
@@ -50,11 +50,18 @@ class User extends Authenticatable {
 	];
 	
 	public function smartAttributes() {
-		return $this->hasMany( SmartAttribute::class );
+		return $this->hasMany( SmartAttribute::class )->orderByDesc('value');
+	}
+	public function smartAttributes3() {
+		return $this->hasMany( SmartAttribute::class )->orderByDesc('value')->take(3);
 	}
 	
 	public function job() {
 		return $this->hasMany( Job::class, 'hirer_id', 'id' );
+	}
+	
+	public function answer() {
+		return $this->hasMany( Answer::class );
 	}
 	
 	public function category() {
