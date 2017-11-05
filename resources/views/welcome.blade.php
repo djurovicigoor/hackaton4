@@ -67,7 +67,8 @@
                         <div class="btn-group" uib-dropdown is-open="status.isopen">
                             <button id="single-button" type="button" class="btn user-btn" uib-dropdown-toggle
                                     >
-                                <img src="angular/img/user.png" alt="">
+                                <img ng-if="!isWorker" src="angular/img/hireProfile.png" alt="">
+                                <img ng-if="isWorker" src="angular/img/user.png" alt="">
                                  @{{user.name}} <span class="caret"></span>
                             </button>
                             <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">

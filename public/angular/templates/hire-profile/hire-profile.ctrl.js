@@ -1,6 +1,6 @@
-app.controller('HireProfileCtrl', function ($scope, $uibModal) {
+app.controller('HireProfileCtrl', function ($scope, $uibModal, ROUTES, $http, $routeParams) {
     var $ctrl = this;
-
+    $scope.company = [];
     $ctrl.animationsEnabled = true;
 
     $ctrl.open = function (size, parentSelector) {
@@ -36,4 +36,14 @@ app.controller('HireProfileCtrl', function ($scope, $uibModal) {
         $ctrl.dismiss({$value: 'cancel'});
     };
 
+
+    $scope.getCompanyData = function () {
+        $http.get(ROUTES.api + 'user/' + $routeParams.id)
+            .then(function (response) {
+                console.log(response);
+                $scope.company = response.data.data;
+            }, function (error) {
+            });
+    };
+    $scope.getCompanyData();
 });

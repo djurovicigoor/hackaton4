@@ -29,7 +29,7 @@
     <p class="title-text" ng-if="categoryName">Result for {{categoryName}}</p>
     <div ng-if="jobs.data.length > 0">
         <div class="row card-position fader">
-            <a class="card-pointer" ng-repeat="job in jobs.data" ng-click="goToUrl('/single-view'); smartSys(job.catArray);">
+            <a class="card-pointer" ng-repeat="job in jobs.data" ng-click="goToUrl('/single-view/' + job.id); smartSys(job.catArray);">
                 <div class="col-sm-6 col-md-4">
                     <div class="thumbnail custom-thumbnail">
                         <img src="angular/img/card-picture.png" alt="...">

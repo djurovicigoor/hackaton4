@@ -4,7 +4,7 @@ app.controller('EventCtrl', function ($scope, $rootScope, $http, ROUTES, $pusher
 
     $scope.user = $cookies.getObject('user');
     $scope.role = $cookies.get('role');
-
+    $scope.isWorker = false;
     $scope.logout = function () {
         $cookies.remove('token');
         $cookies.remove('users');
@@ -15,6 +15,10 @@ app.controller('EventCtrl', function ($scope, $rootScope, $http, ROUTES, $pusher
 
     if ($cookies.get('token')) {
         $scope.isLogged = true;
+    }
+
+    if($cookies.get('role') === 'Worker') {
+        $scope.isWorker = true;
     }
 
     //pusher
