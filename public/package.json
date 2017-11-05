@@ -16,6 +16,7 @@
     "angular-ui-bootstrap": "^2.5.6",
     "angular-ui-notification": "^0.3.6",
     "bootstrap": "^3.3.7",
-    "font-awesome": "^4.7.0"
+    "font-awesome": "^4.7.0",
+    "pusher-angular": "^0.1.9"
   }
 }

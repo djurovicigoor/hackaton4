@@ -4,7 +4,8 @@ var app = angular.module('app', [
     'ngCookies',
     'ngAnimate',
     'ui-notification',
-    'ui.bootstrap'
+    'ui.bootstrap',
+    'pusher-angular'
 ]);
 
 /**

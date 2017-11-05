@@ -88,3 +88,11 @@
 .pagination-position {
     text-align: center;
 }
+
+.dropdown-menu li a {
+    cursor: pointer;
+}
+
+.card-pointer {
+    cursor: pointer;
+}

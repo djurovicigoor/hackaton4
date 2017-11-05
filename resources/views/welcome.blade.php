@@ -76,7 +76,8 @@
 <script src="{{asset('node_modules/angular-animate/angular-animate.min.js')}}"></script>
 <script src="{{asset('node_modules/angular-ui-notification/dist/angular-ui-notification.min.js')}}"></script>
 <script src="{{asset('node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js')}}"></script>
-
+<script src="https://js.pusher.com/4.2/pusher.min.js"></script>
+<script src="{{asset('node_modules/pusher-angular/lib/pusher-angular.min.js')}}"></script>
 
 <script src="{{asset('angular/js/app.js')}}"></script>
 <script src="{{asset('angular/js/constants.js')}}"></script>
