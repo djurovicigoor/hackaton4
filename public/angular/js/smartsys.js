@@ -2,6 +2,10 @@
 app.controller('EventCtrl', function ($scope, $rootScope, $http, ROUTES, $pusher, $cookies, $location, $uibModal) {
     $scope.isLogged = false;
 
+    $scope.goToUrl = function (url) {
+        $location.path(url);
+    };
+
     $scope.user = $cookies.getObject('user');
     $scope.role = $cookies.get('role');
     $scope.isWorker = false;

@@ -6,18 +6,20 @@ app.controller('JobsCtrl', function ($scope, $http, ROUTES, $cookies, $location,
     $scope.categoryName = '';
     $scope.searchApi = 'search/job';
     $scope.role = $cookies.get('role');
-    console.log($scope.role);
 
-    if ($scope.role == 'Worker') {
+    if ($scope.role === 'Worker') {
         $scope.searchApi = 'search/job/smart'
     } else {
         $scope.searchApi = 'search/user/smart'
     }
 
-    $scope.getJobs = function (page) {
-        $http.post(ROUTES.api + $scope.searchApi, {page: page})
+    if($scope.role === undefined) {
+        $scope.searchApi = 'search/job';
+    }
+    $scope.getJobs = function () {
+        $http.post(ROUTES.api + $scope.searchApi)
             .then(function (response) {
-                $scope.jobs = response.data.data;
+                $scope.jobs = response.data;
                 angular.forEach($scope.jobs.data, function (job) {
                     job.catArray = [];
                     angular.forEach(job.category, function (category) {
@@ -30,17 +32,17 @@ app.controller('JobsCtrl', function ($scope, $http, ROUTES, $cookies, $location,
 
             });
     };
-    $scope.getJobs(1);
+    $scope.getJobs();
     $scope.searchOnDelay = function () {
-        if ($scope.role == 'Worker') {
+        if ($scope.role === 'Worker' || $scope.role === undefined) {
             $scope.searchApi = 'search/job'
         } else {
             $scope.searchApi = 'search/user'
         }
-        // $scope.searchApi = 'search/job';
         $http.post(ROUTES.api + $scope.searchApi, {query: $scope.searchText + ' ' + $scope.categoryName})
             .then(function (response) {
-                $scope.jobs = response.data.data;
+
+                $scope.jobs = response.data;
                 angular.forEach($scope.jobs.data, function (job) {
                     job.catArray = [];
                     angular.forEach(job.category, function (category) {
