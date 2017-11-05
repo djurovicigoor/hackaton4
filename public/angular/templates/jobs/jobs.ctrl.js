@@ -1,6 +1,8 @@
-app.controller('JobsCtrl', function ($scope, $http, ROUTES, $cookies) {
+app.controller('JobsCtrl', function ($scope, $http, ROUTES, $cookies, $location) {
     $scope.jobs = [];
+    $scope.categories = [];
     $scope.searchText = '';
+    $scope.categoryName = '';
     $scope.searchApi = 'search/job';
 
     if ($cookies.get('token')) {
@@ -19,7 +21,6 @@ app.controller('JobsCtrl', function ($scope, $http, ROUTES, $cookies) {
                         });
                     });
                 });
-
             }, function (error) {
 
             });
@@ -27,7 +28,7 @@ app.controller('JobsCtrl', function ($scope, $http, ROUTES, $cookies) {
     $scope.getJobs(1);
     $scope.searchOnDelay = function () {
         $scope.searchApi = 'search/job';
-        $http.post(ROUTES.api + $scope.searchApi, {query: $scope.searchText})
+        $http.post(ROUTES.api + $scope.searchApi, {query: $scope.searchText + ' ' + $scope.categoryName})
             .then(function (response) {
                 $scope.jobs = response.data.data;
                 angular.forEach($scope.jobs.data, function (job) {
@@ -42,5 +43,25 @@ app.controller('JobsCtrl', function ($scope, $http, ROUTES, $cookies) {
             }, function (error) {
 
             });
+    };
+
+    $scope.getCategories = function() {
+        $http.get(ROUTES.api + 'subcategory')
+            .then(function (response) {
+                $scope.categories = response.data.data;
+            }, function (error) {
+
+            });
+    };
+    $scope.getCategories();
+
+    $scope.addCatName = function (catName) {
+
+        $scope.categoryName = catName;
+        $scope.searchOnDelay();
+    };
+
+    $scope.goToUrl = function (url) {
+        $location.path(url);
     };
 });
