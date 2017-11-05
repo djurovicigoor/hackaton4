@@ -72,7 +72,9 @@
                                  @{{user.name}} <span class="caret"></span>
                             </button>
                             <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
-                                <li role="menuitem"><a ng-if="role == 'Worker'" href="#!/worker-profile">Profile</a><a ng-if="role == 'Hirer'" href="#!/hire-profile">Profile</a</li>
+                                <li role="menuitem">
+                                    <a ng-if="role == 'Worker'" href="#!/worker-profile">Profile</a>
+                                    <a ng-if="role == 'Hirer'"  ng-click="goToUrl('hire-profile/' + user.id)">Profile</a></li>
                                 <li><a  ng-click="logout()" href="#!/login">Logout</a></li>
                             </ul>
                         </div>
