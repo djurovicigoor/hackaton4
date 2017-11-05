@@ -1,0 +1,32 @@
+.al-home-title {
+    font-size: 46px;
+    font-family: "montserratExtraLight";
+    color: rgb(38, 50, 56);
+    line-height: 1.2;
+    text-align: center;
+}
+
+.al-sub-title {
+    font-size: 40px;
+    font-family: "montserratRegular";
+    text-align: center;
+    color: rgb(38, 50, 56);
+}
+
+.al-input-search {
+    margin-top: 30px;
+    border-radius: 2px;
+    background-color: rgb(41, 98, 255);
+    width: 251px;
+    height: 64px;
+    outline: none;
+    color: #ffffff;
+    font-family: "montserratLight";
+    padding-left: 50px;
+    border: none;
+    box-shadow: none;
+}
+
+.al-input-search::placeholder {
+    color: #ffffff;
+}
