@@ -57,7 +57,15 @@
                     <p class="cards-title">SKILLS</p>
                 </div>
                 <div class="row">
-
+                    <chips ng-model="skills">
+                        <chip-tmpl>
+                            <div class="default-chip">
+                                {{chip}}
+                                <span class="glyphicon glyphicon-remove" remove-chip></span>
+                            </div>
+                        </chip-tmpl>
+                        <input class="input-chip" ng-model-control ng-model="typeaheadmodel" uib-typeahead="skill for skill in availableSkills| filter:$viewValue"></input>
+                    </chips>
                 </div>
             </div>
         </div>

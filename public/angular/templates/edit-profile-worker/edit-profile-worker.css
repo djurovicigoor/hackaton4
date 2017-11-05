@@ -64,6 +64,38 @@ body {
     box-shadow: none;
     /*width: 100%!important;*/
 }
+chips {
+    padding-left: 8px;
+    padding-right: 15px;
+}
+.chip-out-focus {
+    border-bottom: 2px solid #cfd8dc!important;
+}
+.chip-in-focus {
+    border-bottom: 2px solid #cfd8dc!important;
+}
+.default-chip {
+    background-color: #eceff1;
+    border-radius: 15px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: max-content;
+    font-family: montserratMedium;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #2962ff;
+    float: left;
+    margin-left: 7px;
+    border: none!important;
+}
+chip-tmpl {
+    margin: 0px;
+}
+.dropdown-menu>.active>a {
+    background-color: #2962ff!important;
+}
 
 .al-input-group input::placeholder {
     color: #263238;
