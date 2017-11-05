@@ -31,7 +31,8 @@ class StoreAnswerRequest extends FormRequest {
 	 */
 	public function rules() {
 		return [
-			'answered' => 'required',
+			'level'       => 'required',
+			'question_id' => 'required',
 		];
 	}
 }

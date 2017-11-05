@@ -39,16 +39,16 @@ class SendQuestion extends Command {
 	 * @return mixed
 	 */
 	public function handle() {
-		
+/*
 		$usersCollection = Role::with( 'users' )->where( 'id', 3 )->first()->users;
 		$users           = $usersCollection->toArray();
-		$keys            = array_keys( $users );
-		
+		$keys            = array_keys( $users );*/
+/*
 		$randNumber1      = mt_rand( min( $keys ), max( $keys ) );
 		$randNumber2      = mt_rand( min( $keys ), max( $keys ) );
-		$randNumber3      = mt_rand( min( $keys ), max( $keys ) );
+		$randNumber3      = mt_rand( min( $keys ), max( $keys ) );*/
 		
-		$user = User::find(2);
+		$user = User::find(4);
 		
 		$answers = Answer::where('user_id' , $user->id)->get();
 		$arr = collect();
@@ -58,6 +58,6 @@ class SendQuestion extends Command {
 		
 		$question = Question::whereNotIn('id',$arr)->get();
 		
-		event(new SendQuestionEvent($user , $question));
+		event(new SendQuestionEvent($user , $question->first()));
 	}
 }

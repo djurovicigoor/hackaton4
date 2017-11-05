@@ -18,7 +18,8 @@ class JobController extends Controller {
 	 * @return \Illuminate\Http\Response
 	 */
 	public function index() {
-		$jobs = Job::with( 'category.subCategories' , 'hirer')->paginate( 9 );
+		$jobs = Job::with( 'category.subCategories', 'hirer' )->paginate( 9 );
+		
 		return response()->customResponse( 200, 'Success', $jobs );
 		
 	}
@@ -60,7 +61,7 @@ class JobController extends Controller {
 	 * @return \Illuminate\Http\Response
 	 */
 	public function show( Job $job ) {
-		//
+		return response()->customResponse( 200, 'Success', $job->load( 'category.subCategories', 'hirer' ) );
 	}
 	
 	/**

@@ -18,13 +18,13 @@ class SubCategoryTableSeeder extends Seeder {
 			'Codeigniter',
 			'Yii',
 			'Zend',
-			'Simphony',
-			'JS',
 			'Angular',
-			'Angular2',
+			'Angular2'
+		/*	'Simphony',
+			'JS',
 			'Angular4',
 			'Vue',
-			'React',
+			'React',*/
 		] );
 		
 		$mobile = collect( [
@@ -42,10 +42,10 @@ class SubCategoryTableSeeder extends Seeder {
 			'J,ava',
 		] );
 		$management     = collect( [
-			'Project Management',
-			'Human Management',
-			'IT Support Manager',
-			'Desktop Support Manager',
+			'P Management',
+			'H Management',
+			'IT Support',
+			'Support Manager',
 		] );
 		$cloud          = collect( [
 			'Cloud SUB1',
@@ -63,54 +63,68 @@ class SubCategoryTableSeeder extends Seeder {
 			'Network SUB3',
 		] );
 		
-		$web->each( function( $value, $key ) {
-			if(rand(0,2)){
-				$subCategory       = new SubCategory;
-				$subCategory->name = $value;
-				$subCategory->category()->associate( Category::find( 1 ) );
-				$subCategory->save();
-			}
-		} );
-		$mobile->each( function( $value, $key ) {
-			if(rand(0,2)){
-				$subCategory       = new SubCategory;
-				$subCategory->name = $value;
-				$subCategory->category()->associate( Category::find( 2 ) );
-				$subCategory->save();$subCategory       = new SubCategory;
-			$subCategory->name = $value;
-			$subCategory->category()->associate( Category::find( 2 ) );
-			$subCategory->save();
-			}
-		} );
-		$desktop->each( function( $value, $key ) {
-			$subCategory       = new SubCategory;
-			$subCategory->name = $value;
-			$subCategory->category()->associate( Category::find( 3 ) );
-			$subCategory->save();
-		} );
-		$management->each( function( $value, $key ) {
-			$subCategory       = new SubCategory;
-			$subCategory->name = $value;
-			$subCategory->category()->associate( Category::find( 4 ) );
-			$subCategory->save();
-		} );
-		$cloud->each( function( $value, $key ) {
-			$subCategory       = new SubCategory;
-			$subCategory->name = $value;
-			$subCategory->category()->associate( Category::find( 5 ) );
-			$subCategory->save();
-		} );
-		$administration->each( function( $value, $key ) {
-			$subCategory       = new SubCategory;
-			$subCategory->name = $value;
-			$subCategory->category()->associate( Category::find( 6 ) );
-			$subCategory->save();
-		} );
-		$network->each( function( $value, $key ) {
-			$subCategory       = new SubCategory;
-			$subCategory->name = $value;
-			$subCategory->category()->associate( Category::find( 7 ) );
-			$subCategory->save();
-		} );
+		for($i=1; $i<3; $i++){
+			
+			$web->each( function( $value, $key ) {
+				
+					$subCategory       = new SubCategory;
+					$subCategory->name = $value;
+					$subCategory->category()->associate( Category::find( rand(1,15) ) );
+					$subCategory->save();
+				
+			} );
+			$mobile->each( function( $value, $key ) {
+				
+					$subCategory       = new SubCategory;
+					$subCategory->name = $value;
+					$subCategory->category()->associate( Category::find( rand(1,15) ) );
+					$subCategory->save();
+					/*$subCategory       = new SubCategory;
+					$subCategory->name = $value;
+					$subCategory->category()->associate( Category::find( rand(1,15) ) );
+					$subCategory->save();*/
+				
+			} );
+			$desktop->each( function( $value, $key ) {
+				
+					$subCategory       = new SubCategory;
+					$subCategory->name = $value;
+					$subCategory->category()->associate( Category::find( rand(1,15)) );
+					$subCategory->save();
+				
+			} );
+			/*$management->each( function( $value, $key ) {
+				if(rand( 0, 2 )) {
+					$subCategory       = new SubCategory;
+					$subCategory->name = $value;
+					$subCategory->category()->associate( Category::find(rand(1,15) ) );
+					$subCategory->save();
+				}
+			} );
+			$cloud->each( function( $value, $key ) {
+				if(rand( 0, 2 )) {
+					$subCategory       = new SubCategory;
+					$subCategory->name = $value;
+					$subCategory->category()->associate( Category::find( rand(1,15)) );
+					$subCategory->save();
+				}
+			} );
+			$administration->each( function( $value, $key ) {
+				if(rand( 0, 3 )) {
+					$subCategory       = new SubCategory;
+					$subCategory->name = $value;
+					$subCategory->category()->associate( Category::find(rand(1,15)) );
+					$subCategory->save();
+				}
+			} );
+			$network->each( function( $value, $key ) {
+				if(rand( 0, 3 )) {
+					$subCategory       = new SubCategory;
+					$subCategory->name = $value;
+					$subCategory->category()->associate( Category::find( rand(1,15)) );
+					$subCategory->save();
+				}
+			} );*/
+		}
 	}
 }

@@ -27,20 +27,20 @@ class QuestionController extends Controller {
 	public function store( StoreAnswerRequest $request ) {
 		$user = $request->user();
 		$answer           = new Answer;
-		$answer->answered = $request->get( 'answered' );
+		$answer->level = $request->get( 'level' );
 		$answer->question()->associate( Question::find( $request->get( 'question_id' ) ) );
 		$answer->user()->associate($user);
 		if($answer->save()) {
 			
-			$smartAttr = SmartAttribute::where( ['key'     => $answer->answered,
+			$smartAttr = SmartAttribute::where( ['key'     => $answer->question->answer,
 												 'user_id' => $user->id,
 			] )->first();
 			if($smartAttr) {
-				$smartAttr->value = $smartAttr->value + 5;
+				$smartAttr->value = $smartAttr->value + $answer->level;
 				$smartAttr->save();
 			} else {
 				$newSmartAttr      = new SmartAttribute;
-				$newSmartAttr->key = $answer->answered;
+				$newSmartAttr->key = $answer->question->answer;
 				$newSmartAttr->user()->associate( $user );
 				$newSmartAttr->save();
 			}

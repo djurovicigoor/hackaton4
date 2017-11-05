@@ -19,9 +19,29 @@ class CategoryTableSeeder extends Seeder {
 			'Cloud',
 			'Administration',
 			'Network',
+			'Network1',
+			'Network1',
+			'Network1',
+			'Network1',
+			'Network1',
+			'Network1',
+			'Network1',
+			'Network1',
+			'Network1',
+			'Network1',
+			'Network1',
+			'Network1',
+			'Network1',
+			'Network1',
+			'Network1',
+			'Network1',
+			'Network1',
+			'Network1',
+			'Network1',
+			'Network1',
 		];
 		
-		for($i = 0; $i <=6; $i++){
+		for($i = 1; $i <=25; $i++){
 			$category = new Category;
 			$category->name = $categories[$i];
 			$category->save();

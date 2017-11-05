@@ -14,5 +14,18 @@ class CategoryUserTableSeeder extends Seeder {
 		$categories->each(function($value){
 			$value->users()->attach(rand(3,4));
 		});
+		$categories->each(function($value){
+			$value->users()->attach(\App\User::find(rand(1,54)));
+		});
+		$categories->each(function($value){
+			$value->users()->attach(\App\User::find(rand(1,54)));
+		});
+		$categories->each(function($value){
+			$value->users()->attach(\App\User::find(rand(1,54)));
+		});
+		$categories->each(function($value){
+			$value->users()->attach(\App\User::find(rand(1,54)));
+		});
 	}
+	
 }

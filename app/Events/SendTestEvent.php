@@ -10,20 +10,17 @@ use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcastNow;
 
-class SendQuestionEvent implements ShouldBroadcastNow {
+class SendTestEvent implements ShouldBroadcastNow {
 	use Dispatchable, InteractsWithSockets, SerializesModels;
-	
 	public $user;
-	public $question;
 	
 	/**
 	 * Create a new event instance.
 	 *
 	 * @return void
 	 */
-	public function __construct( User $user,Question $question ) {
-		$this->user     = $user;
-		$this->question = $question;
+	public function __construct( User $user ) {
+		$this->user = $user;
 	}
 	
 	/**
@@ -32,6 +29,7 @@ class SendQuestionEvent implements ShouldBroadcastNow {
 	 * @return \Illuminate\Broadcasting\Channel|array
 	 */
 	public function broadcastOn() {
-		return new Channel( 'question.' . $this->user->id );
+		return new Channel( 'test.' . $this->user->id );
+		
 	}
 }

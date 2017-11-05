@@ -38,7 +38,7 @@ class UsersTableSeeder extends Seeder {
 		if(User::where( 'email', '=', 'djurovic.igoor@gmail.com' )->first() === NULL) {
 			
 			$newUser = User::create( [
-				'name'     => 'Igor',
+				'name'     => 'ClickbyClick',
 				'email'    => 'djurovic.igoor@gmail.com',
 				'password' => bcrypt( 'password' ),
 			] );
@@ -48,7 +48,7 @@ class UsersTableSeeder extends Seeder {
 		if(User::where( 'email', '=', 'vukasinovic@outlook.com' )->first() === NULL) {
 			
 			$newUser = User::create( [
-				'name'     => 'Aleksandar',
+				'name'     => 'CodeF1',
 				'email'    => 'vukasinovic@outlook.com',
 				'password' => bcrypt( 'password' ),
 			] );
@@ -56,17 +56,17 @@ class UsersTableSeeder extends Seeder {
 			$newUser->attachRole( $hirerRole );
 		}
 		
-		if(User::where( 'email', '=', 'darkotuning194@gmail.com' )->first() === NULL) {
+		if(User::where( 'email', '=', 'darko@gmail.com' )->first() === NULL) {
 			
 			$newUser = User::create( [
 				'name'     => 'Darko',
-				'email'    => 'darkotuning194@gmail.com',
+				'email'    => 'darko@gmail.com',
 				'password' => bcrypt( 'password' ),
 			] );
 			
 			$newUser->attachRole( $userWorker );
 		}
-		if(User::where( 'email', '=', 'danilo.cvetkovic@ymail.com' )->first() === NULL) {
+		if(User::where( 'email', '=', 'danilo@ymail.com' )->first() === NULL) {
 			
 			$newUser = User::create( [
 				'name'     => 'Danilo',
@@ -77,6 +77,8 @@ class UsersTableSeeder extends Seeder {
 			$newUser->attachRole( $userWorker );
 		}
 		
+		$hirer = User::find(2);
+		
 		for($i=1; $i<=50; $i++){
 			$newUser = User::create( [
 				'name'     => 'User'.$i,
@@ -85,6 +87,10 @@ class UsersTableSeeder extends Seeder {
 			] );
 			
 			$newUser->attachRole( $userWorker );
+			
+			if($i>10 && $i<20){
+				$hirer->workers()->attach($newUser);
+			}
 		}
 		
 		

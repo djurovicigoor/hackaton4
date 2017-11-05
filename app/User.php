@@ -17,14 +17,23 @@ class User extends Authenticatable {
 	protected $searchable = [
 		
 		'columns' => [
-			'users.name'       => 10,
-			'categories.name' => 8,
+			'users.name'          => 10,
+			'categories.name'     => 8,
 			'sub_categories.name' => 8,
 		],
 		'joins'   => [
-			'category_user' => ['users.id','category_user.user_id',],
-			'categories' => ['category_user.category_id','categories.id',],
-			'sub_categories' => ['sub_categories.category_id','categories.id',],
+			'category_user'  => [
+				'users.id',
+				'category_user.user_id',
+			],
+			'categories'     => [
+				'category_user.category_id',
+				'categories.id',
+			],
+			'sub_categories' => [
+				'sub_categories.category_id',
+				'categories.id',
+			],
 		],
 	];
 	
@@ -37,6 +46,7 @@ class User extends Authenticatable {
 		'name',
 		'email',
 		'password',
+		'video_url',
 	];
 	
 	/**
@@ -50,10 +60,11 @@ class User extends Authenticatable {
 	];
 	
 	public function smartAttributes() {
-		return $this->hasMany( SmartAttribute::class )->orderByDesc('value');
+		return $this->hasMany( SmartAttribute::class )->orderByDesc( 'value' );
 	}
+	
 	public function smartAttributes3() {
-		return $this->hasMany( SmartAttribute::class )->orderByDesc('value')->take(3);
+		return $this->hasMany( SmartAttribute::class )->orderByDesc( 'value' )->take( 3 );
 	}
 	
 	public function job() {
@@ -64,7 +75,19 @@ class User extends Authenticatable {
 		return $this->hasMany( Answer::class );
 	}
 	
+	public function hirerTestResult() {
+		return $this->hasMany( TestResult::class, 'hirer_id', 'id' );
+	}
+	
+	public function workerTestResult() {
+		return $this->hasMany( TestResult::class, 'worker', 'id' );
+	}
+	
 	public function category() {
 		return $this->belongsToMany( Category::class, 'category_user', 'category_id', 'user_id' );
+	}
+	
+	public function workers() {
+		return $this->belongsToMany( User::class, 'employes', 'hirer_id', 'worker_id' );
 	}
 }
