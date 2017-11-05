@@ -3,6 +3,7 @@ app.controller('EventCtrl', function ($scope, $rootScope, $http, ROUTES, $pusher
     $scope.isLogged = false;
 
     $scope.user = $cookies.getObject('user');
+    $scope.role = $cookies.get('role');
 
     $scope.logout = function () {
         $cookies.remove('token');

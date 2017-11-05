@@ -29,10 +29,14 @@
   padding-top: 25px;
 }
 .right-content {
+    text-align: right;
+}
+.right-content a {
   font-family: montserratRegular;
   text-align: right;
   color:#b0bec5;
   font-size: 14px;
+    text-decoration: none;
 }
 .chips-position {
     padding-top: 10px;
